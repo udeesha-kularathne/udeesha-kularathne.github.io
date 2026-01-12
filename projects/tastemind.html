@@ -1,0 +1,339 @@
+<!--projects/tastemind.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TasteMind | Restaurant Sentiment & Recommendation System | Udeesha Kularathne</title>
+    <meta name="description" content="A multi-stage restaurant intelligence platform combining sentiment analysis, aspect scoring, reinforcement learning, and Google Places review analytics.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/projects.css">
+</head>
+
+<body>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<div class="noise"></div>
+
+<!-- Navigation -->
+<nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+        <a href="../index.html" class="nav-logo">
+            <span class="logo-text">Udeesha Kularathne</span>
+        </a>
+        <div class="nav-links">
+            <a href="../index.html#about" class="nav-link" data-text="About">About</a>
+            <a href="../index.html#experience" class="nav-link" data-text="Experience">Experience</a>
+            <a href="../projects.html" class="nav-link active" data-text="Projects">Projects</a>
+            <a href="../blog.html" class="nav-link" data-text="Blog">Blog</a>
+            <a href="../index.html#contact" class="nav-link" data-text="Contact">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Navigation -->
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-content">
+        <a href="../index.html#about" class="mobile-nav-link">About</a>
+        <a href="../index.html#experience" class="mobile-nav-link">Experience</a>
+        <a href="../projects.html" class="mobile-nav-link">Projects</a>
+        <a href="../blog.html" class="mobile-nav-link">Blog</a>
+        <a href="../index.html#contact" class="mobile-nav-link">Contact</a>
+    </div>
+</div>
+
+<!-- Project Hero -->
+<section class="project-hero">
+    <div class="container">
+        <div class="project-hero-content">
+            <div class="project-breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../projects.html">Projects</a>
+                <span>/</span>
+                <span>TasteMind</span>
+            </div>
+
+            <h1 class="project-hero-title">
+                TasteMind — Restaurant Sentiment & Intelligence Platform
+            </h1>
+
+            <p class="project-hero-description">
+                A data-driven restaurant intelligence system that analyzes customer sentiment,
+                extracts fine-grained aspect scores, learns user preferences through reinforcement
+                signals, and generates recommendations using live Google Places review data.
+            </p>
+
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">ML Engineer & Full-Stack Developer</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Timeline</span>
+                    <span class="meta-value">2023 - 2024</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Category</span>
+                    <span class="meta-value">AI/ML, Recommendation Systems</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-bg">
+        <div class="gradient-sphere gradient-sphere-1"></div>
+        <div class="gradient-sphere gradient-sphere-2"></div>
+        <div class="grid-lines"></div>
+    </div>
+</section>
+
+<!-- Project Image -->
+<div class="container">
+    <div class="blog-cover">
+        <div
+                class="project-cover-image"
+                aria-label="Restaurant analytics dashboard"
+                style="background-image: url('../assets/images/projects/tastemind.png');">
+        </div>
+    </div>
+</div>
+
+<!-- Overview -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Project Overview</h2>
+
+        <p>
+            TasteMind was designed to move beyond star ratings and surface-level reviews by
+            extracting structured intelligence from unstructured restaurant feedback. The system
+            ingests real-world reviews, transforms them into sentiment and aspect-level signals,
+            and converts those signals into interpretable scores and personalized recommendations.
+        </p>
+
+        <p>
+            The pipeline begins with automated review collection from Google Places, followed by
+            text cleaning, normalization, and embedding-based representation. Multiple sentiment
+            models are evaluated and combined to improve robustness, while aspect extraction
+            decomposes reviews into dimensions such as food quality, service, ambience, pricing,
+            and cleanliness.
+        </p>
+
+        <p>
+            A reinforcement learning layer refines recommendations over time by observing user
+            interactions and feedback, allowing the system to adapt preferences rather than rely
+            on static scoring rules. The frontend presents insights through dashboards, rankings,
+            and explainable breakdowns, while backend services keep model logic decoupled from UI
+            concerns.
+        </p>
+
+        <p style="font-size: 0.9rem; color: var(--text-muted);">
+            Note: Review sources, weighting strategies, and learning policies are abstracted to
+            respect platform and commercial constraints.
+        </p>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Key Features</h2>
+
+        <div class="features-grid">
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15l-5-5L5 21"/>
+                        <circle cx="9" cy="9" r="7"/>
+                    </svg>
+                </div>
+                <h3>Automated Review Ingestion</h3>
+                <p>
+                    Fetches and standardizes live restaurant reviews from Google Places,
+                    enabling continuous data updates without manual input.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12h18"/>
+                        <path d="M7 8h10"/>
+                        <path d="M9 16h6"/>
+                    </svg>
+                </div>
+                <h3>Sentiment Classification</h3>
+                <p>
+                    Uses supervised NLP models to determine overall sentiment polarity and
+                    confidence, forming the foundation for higher-level scoring.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 19h16"/>
+                        <path d="M4 15l4-4 4 3 6-7"/>
+                    </svg>
+                </div>
+                <h3>Aspect-Based Scoring</h3>
+                <p>
+                    Breaks reviews into interpretable dimensions (food, service, ambience, value)
+                    and computes per-aspect sentiment scores.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <h3>Reinforcement Learning Feedback Loop</h3>
+                <p>
+                    Learns user preferences over time by adjusting recommendation weights based
+                    on interaction outcomes and implicit feedback.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M7 7h10M7 12h10M7 17h10"/>
+                    </svg>
+                </div>
+                <h3>Explainable Recommendations</h3>
+                <p>
+                    Surfaces why a restaurant is recommended by exposing aspect contributions
+                    rather than opaque overall scores.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="tech-stack-section">
+    <div class="container">
+        <h2>Technology & Engineering Stack</h2>
+
+        <div class="tech-grid">
+            <span class="tech-item">Python</span>
+            <span class="tech-item">Flask</span>
+            <span class="tech-item">REST APIs</span>
+
+            <span class="tech-item">Transformers</span>
+            <span class="tech-item">Sentence Embeddings</span>
+            <span class="tech-item">Logistic Regression</span>
+            <span class="tech-item">XGBoost</span>
+
+            <span class="tech-item">Aspect-Based Sentiment Analysis</span>
+            <span class="tech-item">Reinforcement Learning</span>
+
+            <span class="tech-item">Google Places API</span>
+            <span class="tech-item">Data Normalization</span>
+
+            <span class="tech-item">React</span>
+            <span class="tech-item">Data Visualization</span>
+            <span class="tech-item">API-Driven Architecture</span>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Project Gallery</h2>
+        <p>Dashboards, sentiment breakdowns, and recommendation views from the system.</p>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <path d="M21 15l-5-5L5 21"/>
+                </svg>
+            </div>
+            <div class="gallery-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <path d="M21 15l-5-5L5 21"/>
+                </svg>
+            </div>
+            <div class="gallery-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <path d="M21 15l-5-5L5 21"/>
+                </svg>
+            </div>
+            <div class="gallery-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <path d="M21 15l-5-5L5 21"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Results -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Results & Engineering Impact</h2>
+
+        <p>
+            TasteMind demonstrates how unstructured text can be transformed into structured,
+            explainable business intelligence. The combination of sentiment classification,
+            aspect-level scoring, and reinforcement learning produces recommendations that are
+            both adaptive and interpretable.
+        </p>
+
+        <p>
+            From an engineering perspective, the project highlights scalable data ingestion,
+            modular ML services, and a clear separation between model logic and presentation.
+            This design supports extension to new review sources, additional aspects, or
+            alternative learning strategies without reworking the core system.
+        </p>
+    </div>
+</section>
+
+<!-- Navigation -->
+<section class="container">
+    <div class="project-nav">
+        <a href="babycry.html" class="project-nav-link">
+            <span class="project-nav-label">Previous Project</span>
+            <span class="project-nav-title">BabyCry</span>
+        </a>
+        <a href="phishguard.html" class="project-nav-link">
+            <span class="project-nav-label">Next Project</span>
+            <span class="project-nav-title">PhishGuard</span>
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Udeesha Kularathne. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

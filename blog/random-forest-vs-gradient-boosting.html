@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Forest vs Gradient Boosting | Udeesha Kularathne</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/blog-post.css">
+</head>
+<body>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<div class="noise"></div>
+
+<nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+        <a href="../index.html" class="nav-logo"><span class="logo-text">UK</span></a>
+        <div class="nav-links">
+            <a href="../index.html#about" class="nav-link" data-text="About">About</a>
+            <a href="../index.html#experience" class="nav-link" data-text="Experience">Experience</a>
+            <a href="../projects.html" class="nav-link" data-text="Projects">Projects</a>
+            <a href="../blog.html" class="nav-link active" data-text="Blog">Blog</a>
+            <a href="../index.html#contact" class="nav-link" data-text="Contact">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-content">
+        <a href="../index.html#about" class="mobile-nav-link">About</a>
+        <a href="../index.html#experience" class="mobile-nav-link">Experience</a>
+        <a href="../projects.html" class="mobile-nav-link">Projects</a>
+        <a href="../blog.html" class="mobile-nav-link">Blog</a>
+        <a href="../index.html#contact" class="mobile-nav-link">Contact</a>
+    </div>
+</div>
+
+<section class="blog-hero">
+    <div class="blog-hero-content">
+        <div class="blog-breadcrumb">
+            <a href="../index.html">Home</a><span>/</span>
+            <a href="../blog.html">Blog</a><span>/</span>
+            <span>Tree-Based Models</span>
+        </div>
+        <span class="blog-hero-category">AI/ML</span>
+        <h1 class="blog-hero-title">Random Forest vs Gradient Boosting</h1>
+        <div class="blog-hero-meta">
+            <span>January 14, 2026</span>
+            <span>11 min read</span>
+        </div>
+    </div>
+    <div class="hero-bg">
+        <div class="gradient-sphere gradient-sphere-1"></div>
+        <div class="gradient-sphere gradient-sphere-2"></div>
+        <div class="grid-lines"></div>
+    </div>
+</section>
+
+<div class="blog-cover">
+    <div class="blog-cover">
+        <div
+                class="blog-cover-image"
+                aria-label="Random Forest illustration"
+                style="background-image: url('../assets/images/blog/random-forest-vs-gradient-boosting-cover.png');">
+        </div>
+    </div>
+</div>
+<article class="blog-content">
+    <p>
+        Random Forest and Gradient Boosting are often mentioned together, usually as
+        “tree-based ensemble models.” While they both rely on decision trees,
+        they represent two very different philosophies of learning from data.
+    </p>
+    <p>
+        Understanding the difference between them is not just an academic exercise.
+        It directly affects how models behave under noise, how sensitive they are
+        to tuning, and how they perform once deployed in real-world systems.
+    </p>
+
+    <h2>Why Tree-Based Ensembles Are So Powerful</h2>
+    <p>
+        A single decision tree is intuitive and expressive, but also fragile.
+        Small changes in data can produce entirely different trees, leading to
+        high variance and poor generalization.
+    </p>
+    <p>
+        Ensemble methods exist to solve this exact problem. Instead of trusting
+        one tree, they combine many trees so that individual mistakes cancel out.
+        The result is a model that is far more stable than any single tree could be.
+    </p>
+    <p>
+        This is why tree-based ensembles dominate structured and tabular data:
+        they naturally handle non-linear interactions, mixed feature types,
+        missing values, and noisy real-world patterns with very little preprocessing.
+    </p>
+
+    <h2>How Random Forest Works</h2>
+    <p>
+        Random Forest is based on a simple idea: train many decision trees
+        independently and let them vote.
+    </p>
+    <p>
+        Each tree is trained on a different bootstrapped version of the dataset
+        (sampling with replacement). Additionally, at every split, the tree is
+        allowed to consider only a random subset of features.
+    </p>
+    <p>
+        These two sources of randomness are critical. They prevent trees from
+        becoming too similar to each other. If all trees made the same mistakes,
+        averaging them would not help. Random Forest works because the trees
+        disagree in useful ways.
+    </p>
+
+    <pre><code>from sklearn.ensemble import RandomForestClassifier
+
+model = RandomForestClassifier(
+    n_estimators=200,
+    max_depth=None,
+    random_state=42
+)
+
+model.fit(X_train, y_train)</code></pre>
+
+    <p>
+        In practice, Random Forest is forgiving. You can often get strong results
+        without extensive hyperparameter tuning. This makes it an excellent
+        baseline and a reliable choice when development time is limited.
+    </p>
+
+    <h2>How Gradient Boosting Works</h2>
+    <p>
+        Gradient Boosting takes a very different approach. Instead of training
+        trees independently, it trains them sequentially.
+    </p>
+    <p>
+        Each new tree focuses explicitly on correcting the mistakes made by the
+        previous ensemble. In other words, the model is constantly asking:
+        “Where am I still wrong, and how can I fix that?”
+    </p>
+    <p>
+        This process is guided by a loss function. The model computes how wrong
+        its predictions are and adds a new tree that moves the predictions in
+        the direction that reduces that error.
+    </p>
+
+    <pre><code>from sklearn.ensemble import GradientBoostingClassifier
+
+model = GradientBoostingClassifier(
+    n_estimators=150,
+    learning_rate=0.05,
+    max_depth=3
+)
+
+model.fit(X_train, y_train)</code></pre>
+
+    <p>
+        Because each tree builds on the previous ones, Gradient Boosting can
+        model very complex patterns. However, this also makes it more sensitive
+        to noise and hyperparameters.
+    </p>
+
+    <h2>Key Differences in Practice</h2>
+    <p>
+        Random Forest reduces variance by averaging many strong but noisy models.
+        Gradient Boosting reduces bias by gradually improving a weak model.
+    </p>
+    <p>
+        Random Forest tends to be more robust when the data is noisy or imperfect.
+        Gradient Boosting tends to shine when the signal is strong but subtle.
+    </p>
+    <p>
+        From a practical perspective:
+        Random Forest is easier to debug, easier to tune, and less likely to
+        catastrophically overfit.
+        Gradient Boosting can achieve higher peak performance but requires
+        careful control of learning rate, tree depth, and number of estimators.
+    </p>
+
+    <h2>Which One Should You Choose?</h2>
+    <p>
+        If you need a dependable model quickly, Random Forest is often the safest
+        choice. It performs well out of the box and degrades gracefully when
+        assumptions are violated.
+    </p>
+    <p>
+        If you are chasing maximum accuracy and have the time and expertise to
+        tune the model carefully, Gradient Boosting is usually the better option.
+        This is especially true for competitions and well-curated datasets.
+    </p>
+    <p>
+        In real production systems, many teams try both. Random Forest is often
+        used as a strong baseline, while Gradient Boosting (or its optimized
+        variants like XGBoost or LightGBM) is used when incremental gains matter.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+        Random Forest and Gradient Boosting are not rivals — they are tools
+        designed for different trade-offs.
+    </p>
+    <p>
+        Understanding how and why they differ allows you to choose the right
+        model for the problem at hand, rather than blindly reaching for whatever
+        performs best on a leaderboard.
+    </p>
+
+    <div class="blog-tags">
+        <span class="blog-tag">Machine Learning</span>
+        <span class="blog-tag">Ensemble Models</span>
+        <span class="blog-tag">Random Forest</span>
+        <span class="blog-tag">Gradient Boosting</span>
+        <span class="blog-tag">Python</span>
+    </div>
+
+    <div class="blog-author">
+        <div class="blog-author-avatar">UK</div>
+        <div class="blog-author-info">
+            <h4>Udeesha Kularathne</h4>
+            <p>Full-Stack Engineer & AI/ML Enthusiast building intelligent systems.</p>
+        </div>
+    </div>
+
+    <div class="blog-nav">
+        <a href="random-forest-explained.html" class="blog-nav-link">
+            <span class="blog-nav-label">Previous</span>
+            <span class="blog-nav-title">Building Explainable AI Systems</span>
+        </a>
+        <a href="gradient-boosting-explained.html" class="blog-nav-link">
+            <span class="blog-nav-label">Next</span>
+            <span class="blog-nav-title">Real-time Object Detection with YOLOv8</span>
+        </a>
+    </div>
+</article>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">UK</span>
+                <p>Building the future with code and AI.</p>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html#about">About</a>
+                <a href="../projects.html">Projects</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/udeeshakularathne" target="_blank" rel="noopener">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                        <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Udeesha Kularathne. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

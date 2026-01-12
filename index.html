@@ -1,578 +1,651 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Udeesha Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content=""/>
-    <meta name="keywords" content=""/>
-    <meta name="author" content=""/>
-
-    <!-- Facebook and Twitter integration -->
-    <meta property="og:title" content=""/>
-    <meta property="og:image" content=""/>
-    <meta property="og:url" content=""/>
-    <meta property="og:site_name" content=""/>
-    <meta property="og:description" content=""/>
-    <meta name="twitter:title" content=""/>
-    <meta name="twitter:image" content=""/>
-    <meta name="twitter:url" content=""/>
-    <meta name="twitter:card" content=""/>
-
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="shortcut icon" href="favicon.ico">
-
-    <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
-
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="css/icomoon.css">
-    <!-- Bootstrap  -->
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <!-- Owl Carousel -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <!-- Magnific Popup -->
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/style.css">
-
-
-    <!-- Modernizr JS -->
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <!-- FOR IE9 below -->
-    <!--[if lt IE 9]>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udeesha Kularathne | Full-Stack Engineer & AI/ML Enthusiast</title>
+    <meta name="description"
+          content="Full-Stack Engineer and AI/ML Enthusiast building scalable web applications and intelligent systems.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<!-- Cursor Follower -->
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
 
-<nav id="colorlib-main-nav" role="navigation">
-    <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
-    <div class="js-fullheight colorlib-table">
-        <div class="colorlib-table-cell js-fullheight">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="search" placeholder="Enter any key to search...">
-                        <button type="submit" class="btn btn-primary"><i class="icon-search3"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <ul>
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="work.html">Work</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="head-title">Works</h2>
-                    <a href="images/work-1.jpg" class="gallery image-popup-link text-center"
-                       style="background-image: url(images/work-1.jpg);">
-                        <span><i class="icon-search3"></i></span>
-                    </a>
-                    <a href="images/work-2.jpg" class="gallery image-popup-link text-center"
-                       style="background-image: url(images/work-2.jpg);">
-                        <span><i class="icon-search3"></i></span>
-                    </a>
-                    <a href="images/work-3.jpg" class="gallery image-popup-link text-center"
-                       style="background-image: url(images/work-3.jpg);">
-                        <span><i class="icon-search3"></i></span>
-                    </a>
-                    <a href="images/work-4.jpg" class="gallery image-popup-link text-center"
-                       style="background-image: url(images/work-4.jpg);">
-                        <span><i class="icon-search3"></i></span>
-                    </a>
-                </div>
-            </div>
+<!-- Noise Overlay -->
+<div class="noise"></div>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+    <div class="nav-container">
+        <a href="#" class="nav-logo">
+            <span class="logo-text">Udeesha Kularathne</span>
+        </a>
+        <div class="nav-links">
+            <a href="#about" class="nav-link" data-text="About">About</a>
+            <a href="#experience" class="nav-link" data-text="Experience">Experience</a>
+            <a href="#projects" class="nav-link" data-text="Projects">Projects</a>
+            <a href="#blog" class="nav-link" data-text="Blog">Blog</a>
+            <a href="#contact" class="nav-link" data-text="Contact">Contact</a>
         </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </div>
 </nav>
 
-<div id="colorlib-page">
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="colorlib-navbar-brand">
-                        <a class="colorlib-logo" href="index.html"><span>Udeesha</span><span>Kularathne</span></a>
-                    </div>
-                    <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
-                </div>
-            </div>
-        </div>
-    </header>
-    <div id="colorlib-about">
-        <div class="container">
-            <div class="row text-center">
-                <h2 class="bold">Portfolio</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-5 animate-box">
-                    <div class="owl-carousel3">
-                        <div class="item">
-                            <img class="img-responsive about-img" src="images/ss2.jpeg"
-                                 alt="html5 bootstrap template by colorlib.com">
-                        </div>
-                        <div class="item">
-                            <img class="img-responsive about-img" src="images/ss.jpeg"
-                                 alt="html5 bootstrap template by colorlib.com">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-md-push-1 animate-box">
-                    <div class="about-desc">
-                        <div class="owl-carousel3">
-                            <div class="item">
-                                <h2><span>Udeesha</span><span>Kularathne</span></h2>
-                            </div>
-                            <div class="item">
-                                <h2><span>I'm</span><span>A Developer</span></h2>
-                            </div>
-                        </div>
-                           <div class="desc">
-                            <div class="rotate">
-                                <h2 class="heading">About</h2>
-                            </div>
-                            <p>I'm a self-taught programmer with a passion for full-stack development and
-                                machine learning. Whether it’s crafting seamless user experiences or diving into data to
-                                uncover insights, I love tackling new challenges and building innovative solutions. From
-                                designing dynamic web applications to exploring the latest in computer vision, I’m
-                                always learning and pushing the boundaries of what’s possible.
-
-                                Feel free to check out my work and get in touch if you’d like to collaborate or just
-                                chat about tech!
-
-                            </p>
-                            <p class="colorlib-social-icons">
-                                <a href="www.linkedin.com/in/udeeshakularathne"><i class="icon-linkedin4"></i></a>
-                                <!--									<a href="#"><i class="icon-twitter3"></i></a>-->
-                                <a href="mailto:umahinsab@gmail.com"><i class="icon-mail5"></i></a>
-                                <!--									<a href="#"><i class="icon-dribbble2"></i></a>-->
-                            </p>
-                            <p><a href="#" class="btn btn-primary btn-outline">Contact Me!</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- Mobile Navigation -->
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-content">
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#experience" class="mobile-nav-link">Experience</a>
+        <a href="#projects" class="mobile-nav-link">Projects</a>
+        <a href="#blog" class="mobile-nav-link">Blog</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
     </div>
-    <div id="colorlib-services">
-        <div class="container">
-            <div class="row text-center">
-                <h2 class="bold">Services</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="services-flex">
-                        <div class="one-third">
-                            <div class="row">
-                                <div class="col-md-12 col-md-offset-0 animate-box intro-heading">
-                                    <span>My Services</span>
-                                    <h2>Here Are Some of My Skills</h2>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="rotate">
-                                        <h2 class="heading">Services</h2>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="services animate-box">
-                                        <h3>1 - Machine Learning</h3>
-                                        <ul>
-                                            <li>PyTorch</li>
-                                            <li>Tensorflow</li>
-                                            <li>Python</li>
-                                            <li>Deep Learning</li>
-                                        </ul>
-                                    </div>
-                                    <div class="services animate-box">
-                                        <h3>3 - Front End Development</h3>
-                                        <ul>
-                                            <li>HTML / CSS</li>
-                                            <li>Javascript</li>
-                                            <li>Vue</li>
-                                            <li>Reac & Typerscipt</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="services animate-box">
-                                        <h3>2 - ANDROID DEVELOPMENT</h3>
-                                        <ul>
-                                            <li>Java</li>
-                                            <li>Android Studio</li>
-                                            <li>APIs and SDKs</li>
-                                            <li>Cloud</li>
-                                        </ul>
-                                    </div>
-                                    <div class="services animate-box">
-                                        <h3>4 -Back end development</h3>
-                                        <ul>
-                                            <li>Node.js</li>
-                                            <li>PHP</li>
-                                            <li>RESTful APIs</li>
-                                            <li>MySQL & Postgre & MongoDB</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="one-forth services-img" style="background-image: url(images/services-img-1.jpg);">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="colorlib-work">
-        <div class="container">
-            <div class="row text-center">
-                <h2 class="bold">Works</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
-                    <span>Portfolio</span>
-                    <h2>Done Projects</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="rotate">
-                        <h2 class="heading">Portfolio</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="work-entry animate-box">
-                        <a href="work.html" class="work-img" style="background-image: url(images/work-1.jpg);">
-                            <div class="display-t">
-                                <div class="work-name">
-                                    <h2>Pursuing Best</h2>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="col-md-12 ">
-                            <div class="desc">
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and
-                                    Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right
-                                    at the coast of the Semantics, a large language ocean.</p>
-                                <p class="read"><a href="#">View details</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="work-entry animate-box">
-                        <a href="work.html" class="work-img" style="background-image: url(images/work-2.jpg);">
-                            <div class="display-t">
-                                <div class="work-name">
-                                    <h2>Coordinates</h2>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="col-md-12">
-                            <div class="desc">
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and
-                                    Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right
-                                    at the coast of the Semantics, a large language ocean.</p>
-                                <p class="read"><a href="#">View Details</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="work-entry animate-box">
-                        <a href="work.html" class="work-img" style="background-image: url(images/work-3.jpg);">
-                            <div class="display-t">
-                                <div class="work-name">
-                                    <h2>Cristall</h2>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="col-md-12 ">
-                            <div class="desc">
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and
-                                    Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right
-                                    at the coast of the Semantics, a large language ocean.</p>
-                                <p class="read"><a href="#">View details</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="work-entry animate-box">
-                        <a href="work.html" class="work-img" style="background-image: url(images/work-4.jpg);">
-                            <div class="display-t">
-                                <div class="work-name">
-                                    <h2>Black</h2>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="col-md-12">
-                            <div class="desc">
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and
-                                    Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right
-                                    at the coast of the Semantics, a large language ocean.</p>
-                                <p class="read"><a href="#">View details</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="colorlib-blog">
-        <div class="container">
-            <div class="row text-center">
-                <h2 class="bold">Blog</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
-                    <span>Blog</span>
-                    <h2>Read Our Case</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="rotate">
-                        <h2 class="heading">Our Blog</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row animate-box">
-                <div class="owl-carousel1">
-                    <div class="item">
-                        <div class="col-md-12">
-                            <div class="article">
-                                <a href="blog.html" class="blog-img">
-                                    <img class="img-responsive" src="images/img-1.jpg"
-                                         alt="html5 bootstrap by colorlib.com">
-                                    <div class="overlay"></div>
-                                    <div class="link">
-											<span class="read">Read more</h2>
-                                    </div>
-                                </a>
-                                <div class="desc">
-                                    <span class="meta">15, Feb 2018</span>
-                                    <h2><a href="blog.html">A Japanese Constellation</a></h2>
-                                    <p>When she reached the first hills of the Italic Mountains, she had a last view
-                                        back on the skyline of her hometown Bookmarksgrove</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="col-md-12">
-                            <div class="article">
-                                <a href="blog.html" class="blog-img">
-                                    <img class="img-responsive" src="images/img-2.jpg"
-                                         alt="html5 bootstrap by colorlib.com">
-                                    <div class="overlay"></div>
-                                    <div class="link">
-											<span class="read">Read more</h2>
-                                    </div>
-                                </a>
-                                <div class="desc">
-                                    <span class="meta">15, Feb 2018</span>
-                                    <h2><a href="blog.html">A Japanese Constellation</a></h2>
-                                    <p>When she reached the first hills of the Italic Mountains, she had a last view
-                                        back on the skyline of her hometown Bookmarksgrove</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="col-md-12">
-                            <div class="article">
-                                <a href="blog.html" class="blog-img">
-                                    <img class="img-responsive" src="images/img-3.jpg"
-                                         alt="html5 bootstrap by colorlib.com">
-                                    <div class="overlay"></div>
-                                    <div class="link">
-											<span class="read">Read more</h2>
-                                    </div>
-                                </a>
-                                <div class="desc">
-                                    <span class="meta">15, Feb 2018</span>
-                                    <h2><a href="blog.html">A Japanese Constellation</a></h2>
-                                    <p>When she reached the first hills of the Italic Mountains, she had a last view
-                                        back on the skyline of her hometown Bookmarksgrove</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<!--    <div id="colorlib-testimony">-->
-<!--        <div class="container">-->
-<!--            <div class="row text-center">-->
-<!--                <h2 class="bold">Testimonies</h2>-->
-<!--            </div>-->
-<!--            <div class="row">-->
-<!--                <div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">-->
-<!--                    <span>Testimonies</span>-->
-<!--                    <h2>Clients Says</h2>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="row">-->
-<!--                <div class="col-md-12">-->
-<!--                    <div class="rotate">-->
-<!--                        <h2 class="heading">Says</h2>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="row animate-box">-->
-<!--                <div class="owl-carousel">-->
-<!--                    <div class="item">-->
-<!--                        <div class="col-md-12 text-center">-->
-<!--                            <div class="testimony">-->
-<!--                                <blockquote>-->
-<!--                                    <p>"A small river named Duden flows by their place and supplies it with the-->
-<!--                                        necessary regelialia.</p>-->
-<!--                                    <span>" &mdash; George Brooks</span>-->
-<!--                                </blockquote>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="item">-->
-<!--                        <div class="col-md-12 text-center">-->
-<!--                            <div class="testimony">-->
-<!--                                <blockquote>-->
-<!--                                    <p>"Even the all-powerful Pointing has no control about the blind texts it is an-->
-<!--                                        almost unorthographic life One day however a small line of blind text by the-->
-<!--                                        name of Lorem Ipsum decided to leave for the far World of Grammar.</p>-->
-<!--                                    <span>" &mdash; Daniel Foster</span>-->
-<!--                                </blockquote>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="item">-->
-<!--                        <div class="col-md-12 text-center">-->
-<!--                            <div class="testimony">-->
-<!--                                <blockquote>-->
-<!--                                    <p>"When she reached the first hills of the Italic Mountains, she had a last view-->
-<!--                                        back on the skyline of her hometown Bookmarksgrove</p>-->
-<!--                                    <span>" &mdash; Liam Jenkins</span>-->
-<!--                                </blockquote>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
-    <footer>
-        <div id="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-pb-sm">
-                        <div class="row">
-                            <div class="col-md-10">
-                                <h2>Let's Talk</h2>
-                                <p>A small river named Duden flows by their place and supplies.</p>
-                                <p><a href="#">noah@info.com</a></p>
-                                <p class="colorlib-social-icons">
-                                    <a href="#"><i class="icon-facebook4"></i></a>
-                                    <a href="#"><i class="icon-twitter3"></i></a>
-                                    <a href="#"><i class="icon-googleplus"></i></a>
-                                    <a href="#"><i class="icon-dribbble2"></i></a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-pb-sm">
-                        <h2>Latest Blog</h2>
-                        <div class="f-entry">
-                            <a href="#" class="featured-img" style="background-image: url(images/img-1.jpg);"></a>
-                            <div class="desc">
-                                <span>February 15, 2018</span>
-                                <h3><a href="#">Art Gallery in Japan</a></h3>
-                            </div>
-                        </div>
-                        <div class="f-entry">
-                            <a href="#" class="featured-img" style="background-image: url(images/img-2.jpg);"></a>
-                            <div class="desc">
-                                <span>February 9, 2018</span>
-                                <h3><a href="#">A Japanese Constellation</a></h3>
-                            </div>
-                        </div>
-                        <div class="f-entry">
-                            <a href="#" class="featured-img" style="background-image: url(images/img-3.jpg);"></a>
-                            <div class="desc">
-                                <span>February 15, 2018</span>
-                                <h3><a href="#">Road Trip</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-pb-sm">
-                        <h2>Newsletter</h2>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                            regelialia</p>
-                        <div class="subscribe text-center">
-                            <div class="form-group">
-                                <input type="text" class="form-control text-center" placeholder="Enter Email address">
-                                <input type="submit" value="Subscribe" class="btn btn-primary btn-custom">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <p>
-                            &copy;
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                            All rights reserved | This template is made with <i class="icon-heart4"
-                                                                                aria-hidden="true"></i><a
-                                href="https://colorlib.com" target="_blank"></a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
 </div>
 
-<!-- jQuery -->
-<script src="js/jquery.min.js"></script>
-<!-- jQuery Easing -->
-<script src="js/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="js/bootstrap.min.js"></script>
-<!-- Waypoints -->
-<script src="js/jquery.waypoints.min.js"></script>
-<!-- Owl Carousel -->
-<script src="js/owl.carousel.min.js"></script>
-<!-- Magnific Popup -->
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/magnific-popup-options.js"></script>
+<!-- Hero Section -->
+<section class="hero" id="hero">
+    <div class="hero-bg">
+        <div class="gradient-sphere gradient-sphere-1"></div>
+        <div class="gradient-sphere gradient-sphere-2"></div>
+        <div class="gradient-sphere gradient-sphere-3"></div>
+        <div class="grid-lines"></div>
+    </div>
+    <div class="hero-content">
+        <div class="hero-intro">
+            <span class="hero-greeting">Hello, I'm</span>
+        </div>
+        <h1 class="hero-name">
+            <span class="name-line">Udeesha</span>
+            <span class="name-line">Kularathne</span>
+        </h1>
+        <div class="hero-title-wrapper">
+            <div class="hero-title">
+                <span class="title-static">Full-Stack Engineer</span>
+                <span class="title-divider">&</span>
+                <span class="title-dynamic">
+                    <span class="title-word">AI/ML Enthusiast</span>
+                </span>
+            </div>
+        </div>
+        <p class="hero-description">
+            Building scalable web applications, intelligent systems, and data-driven solutions.
+            Specializing in React, Node.js, Python, and cutting-edge ML technologies.
+        </p>
+        <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">
+                <span>View Projects</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+                <span>Get in Touch</span>
+            </a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number" data-count="7">0</span>
+                <span class="stat-plus">+</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" data-count="200">0</span>
+                <span class="stat-plus">+</span>
+                <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" data-count="300">0</span>
+                <span class="stat-plus">+</span>
+                <span class="stat-label">AI/ML Models</span>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <div class="mouse">
+            <div class="wheel"></div>
+        </div>
+        <span>Scroll to explore</span>
+    </div>
+</section>
 
-<!-- Main JS (Do not remove) -->
-<script src="js/main.js"></script>
+<!-- About Section -->
+<section class="section about" id="about">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Introduction</span>
+            <h2 class="section-title">About Me</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-image-wrapper">
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <div
+                                class="profile-cover-image"
+                                aria-label="Restaurant analytics dashboard"
+                                style="
 
+            background-image:
+                linear-gradient(
+                    rgba(0,0,0,0.4),
+                    rgba(0,0,0,0.4)
+                ),
+                url('assets/images/profile.jpg');
+            background-size: cover;
+            background-position: center;
+        ">
+                        </div>
+                    </div>
+                    <div class="image-border"></div>
+                </div>
+                <div class="about-float-card">
+                    <div class="float-card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <span>Building AI-powered solutions</span>
+                </div>
+            </div>
+            <div class="about-text">
+                <p class="about-lead">
+                    I'm a passionate Full-Stack Engineer with a deep enthusiasm for Machine Learning and AI,
+                    dedicated to building scalable web applications and intelligent systems that make a real impact.
+                </p>
+                <p>
+                    With hands-on experience across React, TypeScript, Node.js, Python, and modern ML frameworks like
+                    PyTorch and TensorFlow, I specialize in crafting seamless front-end experiences backed by robust
+                    architectures. From real-time recommendation engines to computer vision pipelines and explainable
+                    AI models, I love solving complex problems and pushing technological boundaries.
+                </p>
+                <p>
+                    Currently, I'm expanding my expertise in AI integration, computer vision, and intelligent automation,
+                    focusing on bringing cutting-edge technologies into practical, production-ready applications.
+                </p>
+                <div class="about-skills">
+                    <h3>Core Technologies</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Frontend & Backend</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Vue</span>
+                                <span class="skill-tag">TypeScript</span>
+                                <span class="skill-tag">Next.js</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Microservices</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h4>Databases & Integration</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">PostgreSQL</span>
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">SQLite</span>
+                                <span class="skill-tag">Supabase</span>
+                                <span class="skill-tag">REST API</span>
+                                <span class="skill-tag">Cloud Data Services</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>AI / Machine Learning</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">PyTorch</span>
+                                <span class="skill-tag">TensorFlow</span>
+                                <span class="skill-tag">scikit-learn</span>
+                                <span class="skill-tag">OpenCV</span>
+                                <span class="skill-tag">Neural Networks</span>
+                                <span class="skill-tag">Deep Learning</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>DevOps & Tools</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Git & GitHub</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">CI/CD</span>
+                                <span class="skill-tag">Postman</span></span>
+                                <span class="skill-tag">Jetbrains</span></span>
+                                <span class="skill-tag">AWS</span></span>
+                                <span class="skill-tag">GCP</span></span>
+                                <span class="skill-tag">Firebase</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience Section -->
+<section class="section experience" id="experience">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Career Journey</span>
+            <h2 class="section-title">Experience</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                    <div class="marker-line"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <div class="timeline-company">
+                            <h3>ICT Options Pvt Ltd</h3>
+                            <span class="timeline-role">Software Engineer</span>
+                        </div>
+                        <span class="timeline-date">2023 - Present</span>
+                    </div>
+                    <p class="timeline-description">
+                        Leading development of enterprise solutions with strong focus on AI/ML integration.
+                        Key projects include POS 2.0 with ML Analytics, Aflatoxin Detection System,
+                        Computer Vision-based Safety Systems, and Explainable AI for Phishing Detection.
+                    </p>
+                    <div class="timeline-tech">
+                        <span>React</span>
+                        <span>Python</span>
+                        <span>PyTorch</span>
+                        <span>YOLO</span>
+                        <span>XAI</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                    <div class="marker-line"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <div class="timeline-company">
+                            <h3>Sustainable Education Foundation</h3>
+                            <span class="timeline-role">Software Engineer - Open Source</span>
+                        </div>
+                        <span class="timeline-date">2024 - Present</span>
+                    </div>
+                    <p class="timeline-description">
+                        Building web solutions for educational initiatives, focusing on accessible
+                        and scalable platforms using modern technologies.
+                    </p>
+                    <div class="timeline-tech">
+                        <span>TypeScript</span>
+                        <span>React</span>
+                        <span>Tailwind</span>
+                        <span>Git</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                    <div class="marker-line"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <div class="timeline-company">
+                            <h3>Genzo Holdings Pvt Ltd</h3>
+                            <span class="timeline-role">Software Engineer</span>
+                        </div>
+                        <span class="timeline-date">2018 - 2023</span>
+                    </div>
+                    <p class="timeline-description">
+                        Developed and maintained enterprise-level systems for a group of 54 sub-companies.
+                        Built Inventory Management, Employee Management, Delivery Systems, and E-commerce
+                        platforms with comprehensive testing using Selenium and TestLink.
+                    </p>
+                    <div class="timeline-tech">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>SQL</span>
+                        <span>Kotlin</span>
+                        <span>Selenium</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <div class="timeline-company">
+                            <h3>Freelance Developer</h3>
+                            <span class="timeline-role">Full Stack Developer</span>
+                        </div>
+                        <span class="timeline-date">2017 - 2019</span>
+                    </div>
+                    <p class="timeline-description">
+                        Delivered full-stack solutions for various clients, gaining diverse experience
+                        across multiple technologies and industries.
+                    </p>
+                    <div class="timeline-tech">
+                        <span>PHP</span>
+                        <span>JavaScript</span>
+                        <span>MySQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="section projects" id="projects">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Featured Work</span>
+            <h2 class="section-title">Projects</h2>
+        </div>
+        <div class="projects-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ai-ml">AI/ML</button>
+            <button class="filter-btn" data-filter="web">Web Apps</button>
+        </div>
+        <div class="projects-grid">
+            <article class="project-card" data-category="ai-ml web">
+                <div class="project-image">
+                    <div class="blog-cover">
+                        <div class="blog-cover-image" aria-label="POS Analytics" style="background-image: url('assets/images/projects/pos.png');"></div>
+                    </div>
+                    <div class="project-overlay">
+                        <a href="projects/pos-analytics.html" class="project-link">View Project</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag tag-ai">AI/ML</span>
+                        <span class="tag tag-web">Web App</span>
+                    </div>
+                    <h3 class="project-title">POS 2.0 - Retail Analytics</h3>
+                    <p class="project-description">
+                        Modern POS system with ML-driven recommendations, demand forecasting,
+                        and customer retention prediction using SVD and time-series analysis.
+                    </p>
+                    <div class="project-tech">
+                        <span>React</span>
+                        <span>Flask</span>
+                        <span>Python</span>
+                        <span>Supabase</span>
+                    </div>
+                </div>
+            </article>
+            <article class="project-card" data-category="web ai-ml">
+                <div class="project-image">
+                    <div class="blog-cover">
+                        <div class="blog-cover-image" aria-label="Aflatoxin Detection" style="background-image: url('assets/images/projects/aflatoxin.png');"></div>
+                    </div>
+                    <div class="project-overlay">
+                        <a href="projects/aflatoxin-detection.html" class="project-link">View Project</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag tag-ai">AI/ML</span>
+                        <span class="tag tag-web">Web App</span>
+                    </div>
+                    <h3 class="project-title">Aflatoxin Detection & Yield Prediction</h3>
+                    <p class="project-description">
+                        Data-driven agriculture analytics system for predicting aflatoxin contamination risk
+                        and estimating crop yield using machine learning and explainable models.
+                    </p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>scikit-learn</span>
+                        <span>React</span>
+                        <span>Node.js</span>
+                    </div>
+                </div>
+            </article>
+            <article class="project-card" data-category="ai-ml">
+                <div class="project-image">
+                    <div class="blog-cover">
+                        <div class="blog-cover-image" aria-label="PhishGuard" style="background-image: url('assets/images/projects/phishguard.png');"></div>
+                    </div>
+                    <div class="project-overlay">
+                        <a href="projects/phishguard.html" class="project-link">View Project</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag tag-ai">AI/ML</span>
+                        <span class="tag tag-xai">XAI</span>
+                    </div>
+                    <h3 class="project-title">PhishGuard</h3>
+                    <p class="project-description">
+                        Real-time phishing detection system using hybrid machine learning models,
+                        anomaly detection, and explainable AI for transparent security decisions.
+                    </p>
+                    <div class="project-tech">
+                        <span>Transformers</span>
+                        <span>Flask</span>
+                        <span>scikit-learn</span>
+                        <span>Browser Extension</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="projects-cta">
+            <a href="projects.html" class="btn btn-outline">
+                <span>View All Projects</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Section -->
+<section class="section blog" id="blog">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Latest Insights</span>
+            <h2 class="section-title">Blog</h2>
+        </div>
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-cover">
+                        <div class="blog-cover-image" aria-label="Random Forest illustration" style="background-image: url('assets/images/blog/random-forest-vs-gradient-boosting-cover.png');"></div>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">AI/ML</span>
+                    </div>
+                    <h3 class="blog-title">Random Forest vs Gradient Boosting: A Practical Guide</h3>
+                    <p class="blog-excerpt">
+                        A practical comparison of two powerful tree-based ensemble methods,
+                        explaining how they work, where they differ, and when to use each
+                        in real-world machine learning systems.
+                    </p>
+                    <a href="blog/random-forest-vs-gradient-boosting.html" class="blog-link">
+                        <span>Read Article</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-cover">
+                        <div class="blog-cover-image" aria-label="Gradient Boosting" style="background-image: url('assets/images/blog/gradient-boosting-cover.png');"></div>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">AI/ML</span>
+                    </div>
+                    <h3 class="blog-title">Gradient Boosting Explained from First Principles</h3>
+                    <p class="blog-excerpt">
+                        A complete and intuitive deep dive into gradient boosting — from basic intuition to loss
+                        optimization, learning rates, regularization, and real-world use cases.
+                    </p>
+                    <a href="blog/gradient-boosting-explained.html" class="blog-link">
+                        <span>Read Article</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <div class="blog-image">
+                    <div class="blog-cover">
+                        <div class="blog-cover-image" aria-label="Ensemble Learning" style="background-image: url('assets/images/blog/ensemble-learning-cover.png');"></div>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">AI/ML</span>
+                    </div>
+                    <h3 class="blog-title">Why Modern ML Systems Rarely Use Just One Model</h3>
+                    <p class="blog-excerpt">
+                        An intuitive and in-depth explanation of why ensemble methods outperform
+                        single models, using simple analogies and real-world system design thinking.
+                    </p>
+                    <a href="blog/why-ensembles-work.html" class="blog-link">
+                        <span>Read Article</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+        </div>
+        <div class="blog-cta">
+            <a href="blog.html" class="btn btn-outline">
+                <span>View All Posts</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section contact" id="contact">
+    <div class="container">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="section-header">
+                    <span class="section-tag">Get in Touch</span>
+                    <h2 class="section-title">Let's Work Together</h2>
+                </div>
+                <p class="contact-description">
+                    I'm always open to discussing new projects, creative ideas, or opportunities
+                    to be part of your vision. Feel free to reach out!
+                </p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">Email</span>
+                            <a href="mailto:umahinsab@gmail.com">umahinsab@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">LinkedIn</span>
+                            <a href="https://www.linkedin.com/in/udeeshakularathne" target="_blank" rel="noopener">linkedin.com/in/udeeshakularathne</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">Location</span>
+                            <span>Kandy, Sri Lanka</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-visual">
+                <div class="contact-card">
+                    <div class="card-content">
+                        <div class="card-avatar">UK</div>
+                        <h3>Udeesha Kularathne</h3>
+                        <p>Full-Stack Engineer & AI/ML Enthusiast</p>
+                        <div class="card-status">
+                            <span class="status-dot"></span>
+                            <span>Available for opportunities</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">UK</span>
+                <p>Building the future with code and AI.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/udeeshakularathne" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                        <rect x="2" y="9" width="4" height="12"/>
+                        <circle cx="4" cy="4" r="2"/>
+                    </svg>
+                </a>
+                <a href="mailto:umahinsab@gmail.com" aria-label="Email">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Udeesha Kularathne. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>
-

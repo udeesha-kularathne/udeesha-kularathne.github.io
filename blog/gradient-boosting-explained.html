@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Boosting Explained | Udeesha Kularathne</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/blog-post.css">
+</head>
+<body>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<div class="noise"></div>
+
+<nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+        <a href="../index.html" class="nav-logo"><span class="logo-text">UK</span></a>
+        <div class="nav-links">
+            <a href="../index.html#about" class="nav-link" data-text="About">About</a>
+            <a href="../index.html#experience" class="nav-link" data-text="Experience">Experience</a>
+            <a href="../projects.html" class="nav-link" data-text="Projects">Projects</a>
+            <a href="../blog.html" class="nav-link active" data-text="Blog">Blog</a>
+            <a href="../index.html#contact" class="nav-link" data-text="Contact">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-content">
+        <a href="../index.html#about" class="mobile-nav-link">About</a>
+        <a href="../index.html#experience" class="mobile-nav-link">Experience</a>
+        <a href="../projects.html" class="mobile-nav-link">Projects</a>
+        <a href="../blog.html" class="mobile-nav-link">Blog</a>
+        <a href="../index.html#contact" class="mobile-nav-link">Contact</a>
+    </div>
+</div>
+
+<section class="blog-hero">
+    <div class="blog-hero-content">
+        <div class="blog-breadcrumb">
+            <a href="../index.html">Home</a><span>/</span>
+            <a href="../blog.html">Blog</a><span>/</span>
+            <span>Gradient Boosting</span>
+        </div>
+        <span class="blog-hero-category">AI/ML</span>
+        <h1 class="blog-hero-title">Gradient Boosting Explained from First Principles</h1>
+        <div class="blog-hero-meta">
+            <span>January 18, 2026</span>
+            <span>12 min read</span>
+        </div>
+    </div>
+    <div class="hero-bg">
+        <div class="gradient-sphere gradient-sphere-1"></div>
+        <div class="gradient-sphere gradient-sphere-2"></div>
+        <div class="grid-lines"></div>
+    </div>
+</section>
+
+<div class="blog-cover">
+    <div class="blog-cover">
+        <div
+                class="blog-cover-image"
+                aria-label="Random Forest illustration"
+                style="background-image: url('../assets/images/blog/gradient-boosting-cover.png');">
+        </div>
+    </div>
+</div>
+
+
+<article class="blog-content">
+    <p>
+        Gradient boosting is one of the most powerful ideas in modern machine
+        learning, yet it is often misunderstood. Many people know how to
+        “use” it, but not how or why it works. This article explains gradient
+        boosting slowly, intuitively, and thoroughly — without skipping
+        important details.
+    </p>
+
+    <h2>A Very Simple Overview</h2>
+    <p>
+        Imagine you are trying to guess a number. Your first guess is very
+        rough. Someone tells you how wrong you are. You then make a better
+        guess based on that mistake. You repeat this process again and again,
+        improving slightly each time.
+    </p>
+    <p>
+        Gradient boosting works exactly like this — except instead of a
+        person making guesses, we use small decision trees.
+    </p>
+    <p>
+        One tree alone is weak. But many small trees, each fixing the mistakes
+        of the previous ones, can become extremely powerful.
+    </p>
+
+    <h2>Why We Do Not Use One Big Tree</h2>
+    <p>
+        A single deep decision tree tries to learn everything at once. This
+        usually leads to memorization rather than understanding. The tree
+        becomes very confident on training data but performs poorly on new,
+        unseen data.
+    </p>
+    <p>
+        Gradient boosting avoids this by using many shallow trees. Each tree
+        only learns a small correction. Together, they form a strong model
+        that generalizes well.
+    </p>
+
+    <h2>Understanding Trees as Building Blocks</h2>
+    <p>
+        Think of each tree as a simple rule-based checker. It does not try to
+        solve the whole problem. Instead, it answers a very small question
+        like: “Did we underestimate this value?” or “Was this prediction too
+        confident?”
+    </p>
+    <p>
+        The parameter <code>n_estimators</code> simply controls how many of
+        these small trees we stack together.
+    </p>
+
+    <h2>Learning by Fixing Mistakes (Residuals)</h2>
+    <p>
+        Gradient boosting starts with a basic prediction, such as the average
+        value or base probability. It then calculates how far off that
+        prediction is. This difference is called the residual.
+    </p>
+    <p>
+        Each new tree is trained to predict these residuals — not the original
+        labels. Over time, the residuals get smaller and smaller.
+    </p>
+
+    <pre><code># Intuition, not exact code
+initial_prediction = average
+error = actual - initial_prediction
+new_prediction = initial_prediction + tree(error)</code></pre>
+
+    <h2>Why It Is Called “Gradient” Boosting</h2>
+    <p>
+        The word “gradient” comes from optimization. Instead of randomly
+        fixing mistakes, the model uses a loss function to measure how bad
+        its predictions are. The gradient of this loss tells the model the
+        direction in which it should improve.
+    </p>
+    <p>
+        This connects gradient boosting to gradient descent, even though the
+        model itself is built from trees rather than neural networks.
+    </p>
+
+    <h2>The Role of Learning Rate</h2>
+    <p>
+        The learning rate controls how much each new tree is allowed to
+        influence the final prediction. A large learning rate makes fast,
+        aggressive corrections. A small learning rate makes slow, careful
+        improvements.
+    </p>
+    <p>
+        In practice, smaller learning rates with more trees usually lead to
+        better generalization.
+    </p>
+
+    <pre><code>from sklearn.ensemble import GradientBoostingClassifier
+
+model = GradientBoostingClassifier(
+    n_estimators=300,
+    learning_rate=0.05,
+    max_depth=3
+)
+
+model.fit(X_train, y_train)</code></pre>
+
+    <h2>Bias, Variance, and Overfitting</h2>
+    <p>
+        Gradient boosting reduces bias by gradually learning complex
+        patterns. However, if we add too many trees or allow them to grow too
+        deep, the model may start memorizing noise.
+    </p>
+    <p>
+        This is why shallow trees, early stopping, and validation monitoring
+        are important in real systems.
+    </p>
+
+    <h2>When Should You Use Gradient Boosting?</h2>
+    <p>
+        Gradient boosting excels on structured data where feature
+        interactions matter. It is commonly used in finance, forecasting,
+        fraud detection, recommendation systems, and competitive machine
+        learning.
+    </p>
+    <p>
+        However, it is not ideal for very large unstructured data like raw
+        images or audio, where deep learning is more suitable.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+        Gradient boosting is powerful because it is simple at its core:
+        learn, measure error, fix error, repeat. Understanding this loop
+        allows you to tune and apply it confidently rather than treating it
+        as a black box.
+    </p>
+
+    <div class="blog-tags">
+        <span class="blog-tag">Machine Learning</span>
+        <span class="blog-tag">Gradient Boosting</span>
+        <span class="blog-tag">Ensemble Models</span>
+        <span class="blog-tag">Learning Rate</span>
+        <span class="blog-tag">Python</span>
+    </div>
+
+    <div class="blog-author">
+        <div class="blog-author-avatar">UK</div>
+        <div class="blog-author-info">
+            <h4>Udeesha Kularathne</h4>
+            <p>Full-Stack Engineer & AI/ML Enthusiast building intelligent systems.</p>
+        </div>
+    </div>
+
+    <div class="blog-nav">
+        <a href="random-forest-vs-gradient-boosting.html" class="blog-nav-link">
+            <span class="blog-nav-label">Previous</span>
+            <span class="blog-nav-title">Random Forest vs Gradient Boosting</span>
+        </a>
+        <a href="xgboost-explained.html" class="blog-nav-link">
+            <span class="blog-nav-label">Next</span>
+            <span class="blog-nav-title">Real-time Object Detection with YOLOv8</span>
+        </a>
+    </div>
+</article>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">UK</span>
+                <p>Building the future with code and AI.</p>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html#about">About</a>
+                <a href="../projects.html">Projects</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Udeesha Kularathne. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

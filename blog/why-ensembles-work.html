@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Ensemble Models Work | Udeesha Kularathne</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/blog-post.css">
+</head>
+<body>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<div class="noise"></div>
+
+<nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+        <a href="../index.html" class="nav-logo"><span class="logo-text">UK</span></a>
+        <div class="nav-links">
+            <a href="../index.html#about" class="nav-link" data-text="About">About</a>
+            <a href="../index.html#experience" class="nav-link" data-text="Experience">Experience</a>
+            <a href="../projects.html" class="nav-link" data-text="Projects">Projects</a>
+            <a href="../blog.html" class="nav-link active" data-text="Blog">Blog</a>
+            <a href="../index.html#contact" class="nav-link" data-text="Contact">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-content">
+        <a href="../index.html#about" class="mobile-nav-link">About</a>
+        <a href="../index.html#experience" class="mobile-nav-link">Experience</a>
+        <a href="../projects.html" class="mobile-nav-link">Projects</a>
+        <a href="../blog.html" class="mobile-nav-link">Blog</a>
+        <a href="../index.html#contact" class="mobile-nav-link">Contact</a>
+    </div>
+</div>
+
+<section class="blog-hero">
+    <div class="blog-hero-content">
+        <div class="blog-breadcrumb">
+            <a href="../index.html">Home</a><span>/</span>
+            <a href="../blog.html">Blog</a><span>/</span>
+            <span>Ensemble Learning</span>
+        </div>
+        <span class="blog-hero-category">AI/ML</span>
+        <h1 class="blog-hero-title">
+            From Single Models to Ensembles
+        </h1>
+        <div class="blog-hero-meta">
+            <span>January 22, 2026</span>
+            <span>13 min read</span>
+        </div>
+    </div>
+    <div class="hero-bg">
+        <div class="gradient-sphere gradient-sphere-1"></div>
+        <div class="gradient-sphere gradient-sphere-2"></div>
+        <div class="grid-lines"></div>
+    </div>
+</section>
+
+<div class="blog-cover">
+    <div class="blog-cover">
+        <div
+                class="blog-cover-image"
+                aria-label="Random Forest illustration"
+                style="background-image: url('../assets/images/blog/ensemble-learning-cover.png');">
+        </div>
+    </div>
+</div>
+
+<article class="blog-content">
+    <p>
+        In theory, a single well-trained model should be enough. In practice,
+        real-world machine learning systems rarely rely on just one model.
+        Instead, they combine multiple imperfect models into an ensemble.
+    </p>
+    <p>
+        This is not because individual models are weak, but because the real
+        world is messy, noisy, and constantly changing. Ensembles exist to
+        make systems more stable, reliable, and resilient.
+    </p>
+
+    <h2>A Very Simple Overview</h2>
+    <p>
+        Imagine asking one person for advice. Even if they are intelligent,
+        they will have blind spots. Their experiences, assumptions, and biases
+        shape their answer.
+    </p>
+    <p>
+        Now imagine asking multiple people with different backgrounds and then
+        combining their opinions. Some will be wrong, some will be right — but
+        the average answer is often better than any single one.
+    </p>
+    <p>
+        Ensemble learning applies this same idea to machine learning models.
+    </p>
+
+    <h2>The Problem with Single Models</h2>
+    <p>
+        Every model carries bias. A linear model assumes straight-line
+        relationships. A tree model assumes sharp decision boundaries.
+        A neural network assumes patterns can be learned through layers of
+        transformations.
+    </p>
+    <p>
+        No matter how powerful the model, its assumptions limit what it can
+        represent. When a single model fails, it fails completely.
+    </p>
+    <p>
+        Ensembles exist to reduce the risk of putting all trust into one
+        perspective.
+    </p>
+
+    <h2>How Ensembles Reduce Error</h2>
+    <p>
+        Prediction error is often broken down into bias and variance.
+        Bias comes from overly simple assumptions. Variance comes from models
+        being too sensitive to data fluctuations.
+    </p>
+    <p>
+        Ensembles reduce variance by averaging predictions. Random fluctuations
+        cancel out. They can also reduce bias by combining models that make
+        different kinds of errors.
+    </p>
+    <p>
+        The key idea is that errors must be uncorrelated. If all models make
+        the same mistake, the ensemble gains nothing.
+    </p>
+
+    <h2>Different Ways to Build Ensembles</h2>
+    <p>
+        Some ensembles rely on repetition. Random Forest trains many versions
+        of the same model on different samples and features.
+    </p>
+    <p>
+        Others rely on correction. Boosting methods train models sequentially,
+        forcing each new model to focus on previous mistakes.
+    </p>
+    <p>
+        More advanced approaches combine entirely different model families
+        using voting, averaging, or stacking strategies.
+    </p>
+
+    <pre><code># Conceptual ensemble
+final_prediction = (
+    model_1(x) +
+    model_2(x) +
+    model_3(x)
+) / 3</code></pre>
+
+    <h2>Why Diversity Matters</h2>
+    <p>
+        Diversity is the most important ingredient in ensemble learning.
+        Identical models trained in identical ways provide no benefit when
+        combined.
+    </p>
+    <p>
+        Useful diversity can come from randomness, different feature subsets,
+        different architectures, or different training objectives.
+    </p>
+    <p>
+        The more differently models fail, the stronger the ensemble becomes.
+    </p>
+
+    <h2>Real-World ML Systems</h2>
+    <p>
+        In production systems, ensembles are often used quietly for safety.
+        Fraud detection pipelines may require agreement between multiple models.
+        Recommendation systems blend collaborative filtering with content-based
+        models.
+    </p>
+    <p>
+        This is not only about accuracy — it is about reducing catastrophic
+        failures and increasing trust in automated decisions.
+    </p>
+
+    <h2>When You Should Avoid Ensembles</h2>
+    <p>
+        Ensembles come with trade-offs. They increase computational cost,
+        latency, and operational complexity.
+    </p>
+    <p>
+        For real-time systems or simple problems, a single interpretable model
+        may be the better engineering choice.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+        Ensemble learning reflects a simple reality: no single model sees the
+        full picture.
+    </p>
+    <p>
+        By combining multiple imperfect perspectives, we build systems that
+        are more robust, more reliable, and better suited to the uncertainty
+        of the real world.
+    </p>
+
+    <div class="blog-tags">
+        <span class="blog-tag">Machine Learning</span>
+        <span class="blog-tag">Ensemble Learning</span>
+        <span class="blog-tag">Bias Variance</span>
+        <span class="blog-tag">System Design</span>
+        <span class="blog-tag">Python</span>
+    </div>
+
+    <div class="blog-author">
+        <div class="blog-author-avatar">UK</div>
+        <div class="blog-author-info">
+            <h4>Udeesha Kularathne</h4>
+            <p>Full-Stack Engineer & AI/ML Enthusiast building intelligent systems.</p>
+        </div>
+    </div>
+
+    <div class="blog-nav">
+        <a href="gradient-boosting-explained.html" class="blog-nav-link">
+            <span class="blog-nav-label">Previous</span>
+            <span class="blog-nav-title">Gradient Boosting Explained</span>
+        </a>
+        <a href="ml-failures-in-production.html" class="blog-nav-link">
+            <span class="blog-nav-label">Next</span>
+            <span class="blog-nav-title">Real-time Object Detection with YOLOv8</span>
+        </a>
+    </div>
+</article>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">UK</span>
+                <p>Building the future with code and AI.</p>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html#about">About</a>
+                <a href="../projects.html">Projects</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Udeesha Kularathne. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive LMS with Real-Time Comprehension Detection | Udeesha Kularathne</title>
+    <meta name="description" content="An intelligent learning management system with real-time comprehension detection, adaptive analytics, and ML-driven learner insights.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/projects.css">
+</head>
+<body>
+
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<div class="noise"></div>
+
+<!-- Navigation -->
+<nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+        <a href="../index.html" class="nav-logo">
+            <span class="logo-text">Udeesha Kularathne</span>
+        </a>
+        <div class="nav-links">
+            <a href="../index.html#about" class="nav-link">About</a>
+            <a href="../index.html#experience" class="nav-link">Experience</a>
+            <a href="../projects.html" class="nav-link active">Projects</a>
+            <a href="../blog.html" class="nav-link">Blog</a>
+            <a href="../index.html#contact" class="nav-link">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-content">
+        <a href="../index.html#about" class="mobile-nav-link">About</a>
+        <a href="../index.html#experience" class="mobile-nav-link">Experience</a>
+        <a href="../projects.html" class="mobile-nav-link">Projects</a>
+        <a href="../blog.html" class="mobile-nav-link">Blog</a>
+        <a href="../index.html#contact" class="mobile-nav-link">Contact</a>
+    </div>
+</div>
+
+<!-- Hero -->
+<section class="project-hero">
+    <div class="container">
+        <div class="project-hero-content">
+            <div class="project-breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../projects.html">Projects</a>
+                <span>/</span>
+                <span>Smart LMS</span>
+            </div>
+
+            <h1 class="project-hero-title">
+                Adaptive Learning Management System with Real-Time Comprehension Detection
+            </h1>
+
+            <p class="project-hero-description">
+                An intelligent LMS that continuously estimates student comprehension during learning,
+                enabling adaptive insights, instructor analytics, and ML-driven educational support.
+            </p>
+
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Full-Stack Developer & ML Engineer</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Timeline</span>
+                    <span class="meta-value">2023 – 2024</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Category</span>
+                    <span class="meta-value">AI/ML, EdTech, Web Application</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-bg">
+        <div class="gradient-sphere gradient-sphere-1"></div>
+        <div class="gradient-sphere gradient-sphere-2"></div>
+        <div class="grid-lines"></div>
+    </div>
+</section>
+
+<!-- Cover Image -->
+<div class="container">
+    <div class="blog-cover">
+        <div
+                class="project-cover-image"
+                style="background-image: url('../assets/images/projects/lms.png');"
+                aria-label="Smart LMS analytics dashboard">
+        </div>
+    </div>
+</div>
+
+<!-- Overview -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Project Overview</h2>
+
+        <p>
+            This project extends traditional Learning Management Systems by embedding machine learning
+            directly into the learning workflow. Instead of evaluating students only after assessments,
+            the platform continuously estimates comprehension levels while learning activities are in progress.
+        </p>
+
+        <p>
+            Learning interactions, response patterns, and temporal behaviors are transformed into structured
+            features that feed a dedicated ML inference layer. These outputs are surfaced through dashboards
+            and analytics views to support instructors, academic reviewers, and adaptive learning strategies.
+        </p>
+
+        <p>
+            The system follows a clean multi-layer architecture: a React-based frontend for learners and instructors,
+            a backend API layer for LMS operations, and an isolated ML service responsible for comprehension inference
+            and evaluation workflows.
+        </p>
+
+        <p style="font-size: 0.9rem; color: var(--text-muted);">
+            Note: Internal datasets, model thresholds, and institutional logic are intentionally abstracted
+            to respect research and commercial constraints.
+        </p>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Key Features</h2>
+
+        <div class="features-grid">
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2v20M2 12h20"/>
+                    </svg>
+                </div>
+                <h3>Real-Time Comprehension Detection</h3>
+                <p>
+                    Continuously estimates learner understanding during sessions using ML-based inference,
+                    rather than relying solely on post-assessment scores.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 3v18h18"/>
+                        <path d="M7 15l4-4 4 3 4-6"/>
+                    </svg>
+                </div>
+                <h3>Instructor Analytics</h3>
+                <p>
+                    Aggregated comprehension trends across students, topics, and time windows
+                    to support instructional decision-making.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <h3>Temporal Learning Analysis</h3>
+                <p>
+                    Tracks how understanding evolves over time, enabling detection of learning stagnation
+                    or improvement patterns.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M7 7h10M7 12h10M7 17h10"/>
+                    </svg>
+                </div>
+                <h3>Modular ML Inference Layer</h3>
+                <p>
+                    Machine learning models are deployed as isolated services, allowing updates and retraining
+                    without impacting LMS functionality.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="tech-stack-section">
+    <div class="container">
+        <h2>Technology & Engineering Stack</h2>
+        <div class="tech-grid">
+            <span class="tech-item">React</span>
+            <span class="tech-item">JavaScript</span>
+            <span class="tech-item">Node.js</span>
+            <span class="tech-item">Express.js</span>
+            <span class="tech-item">REST APIs</span>
+
+            <span class="tech-item">Supabase</span>
+            <span class="tech-item">PostgreSQL</span>
+
+            <span class="tech-item">Python</span>
+            <span class="tech-item">scikit-learn</span>
+            <span class="tech-item">Feature Pipelines</span>
+            <span class="tech-item">Inference Services</span>
+
+            <span class="tech-item">Model Evaluation Workflows</span>
+            <span class="tech-item">Separation of Concerns</span>
+        </div>
+    </div>
+</section>
+
+<!-- Results -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Results & Engineering Impact</h2>
+
+        <p>
+            The primary outcome of this project is the successful integration of real-time machine learning
+            inference into a production-style learning management system. Instead of treating analytics as an
+            offline or post-hoc process, comprehension estimation becomes a first-class, continuously updated
+            signal within the learning workflow itself. This enables earlier identification of learning gaps
+            and supports more timely instructional intervention.
+        </p>
+
+        <p>
+            From a machine learning perspective, the system demonstrates how behavioral and response-level
+            learning signals can be transformed into structured features suitable for supervised inference.
+            By evaluating comprehension as a temporal trend rather than a single outcome, the platform
+            emphasizes learning progression over raw correctness, aligning more closely with real educational
+            contexts.
+        </p>
+
+        <p>
+            On the engineering side, the project showcases a clean separation between presentation, application,
+            and intelligence layers. The frontend focuses exclusively on learning interaction and visualization,
+            while the backend manages learning workflows and data access through stable APIs. Machine learning
+            logic is isolated within a dedicated inference service, allowing models, feature pipelines, and
+            evaluation strategies to evolve independently without disrupting core LMS functionality.
+        </p>
+
+        <p>
+            This architectural choice improves maintainability, simplifies debugging, and enables controlled
+            experimentation with alternative models or scoring strategies. It also establishes a scalable
+            foundation for future extensions such as adaptive content sequencing, automated remediation
+            recommendations, or reinforcement-driven learning adjustments—all without requiring a full system
+            redesign.
+        </p>
+    </div>
+</section>
+
+
+<!-- Navigation -->
+<section class="container">
+    <div class="project-nav">
+        <a href="aflatoxin-detection.html" class="project-nav-link">
+            <span class="project-nav-label">Previous Project</span>
+            <span class="project-nav-title">Aflatoxin Detection & Yield Prediction</span>
+        </a>
+        <a href="restaurant-sentiment.html" class="project-nav-link">
+            <span class="project-nav-label">Next Project</span>
+            <span class="project-nav-title">Restaurant Intelligence Platform</span>
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+
+                <p>Building the future with code and AI.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Udeesha Kularathne. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

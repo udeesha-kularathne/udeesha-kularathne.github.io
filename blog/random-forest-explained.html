@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Forest Explained | Udeesha Kularathne</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/blog-post.css">
+</head>
+<body>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<div class="noise"></div>
+
+<nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+        <a href="../index.html" class="nav-logo"><span class="logo-text">UK</span></a>
+        <div class="nav-links">
+            <a href="../index.html#about" class="nav-link" data-text="About">About</a>
+            <a href="../index.html#experience" class="nav-link" data-text="Experience">Experience</a>
+            <a href="../projects.html" class="nav-link" data-text="Projects">Projects</a>
+            <a href="../blog.html" class="nav-link active" data-text="Blog">Blog</a>
+            <a href="../index.html#contact" class="nav-link" data-text="Contact">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-content">
+        <a href="../index.html#about" class="mobile-nav-link">About</a>
+        <a href="../index.html#experience" class="mobile-nav-link">Experience</a>
+        <a href="../projects.html" class="mobile-nav-link">Projects</a>
+        <a href="../blog.html" class="mobile-nav-link">Blog</a>
+        <a href="../index.html#contact" class="mobile-nav-link">Contact</a>
+    </div>
+</div>
+
+<section class="blog-hero">
+    <div class="blog-hero-content">
+        <div class="blog-breadcrumb">
+            <a href="../index.html">Home</a><span>/</span>
+            <a href="../blog.html">Blog</a><span>/</span>
+            <span>Random Forest</span>
+        </div>
+        <span class="blog-hero-category">AI/ML</span>
+        <h1 class="blog-hero-title">Random Forest Explained from First Principles</h1>
+        <div class="blog-hero-meta">
+            <span>January 26, 2026</span>
+            <span>15 min read</span>
+        </div>
+    </div>
+    <div class="hero-bg">
+        <div class="gradient-sphere gradient-sphere-1"></div>
+        <div class="gradient-sphere gradient-sphere-2"></div>
+        <div class="grid-lines"></div>
+    </div>
+</section>
+
+<div class="blog-cover">
+    <div class="blog-cover">
+        <div
+                class="blog-cover-image"
+                aria-label="Random Forest illustration"
+                style="background-image: url('../assets/images/blog/random-forest-cover.png');">
+        </div>
+    </div>
+</div>
+
+<article class="blog-content">
+    <p>
+        Random Forest is one of the most dependable machine learning algorithms
+        for structured data. Its strength does not come from clever mathematics
+        or complex optimization, but from a simple and surprisingly powerful
+        idea: combine many unreliable models into a single reliable system.
+    </p>
+    <p>
+        To understand why Random Forest works so well, it helps to understand
+        what goes wrong when we rely on just one decision tree.
+    </p>
+
+    <h2>A Very Simple Overview</h2>
+    <p>
+        Imagine asking one person to make an important decision. Even if they
+        are intelligent, they will sometimes be wrong. Their judgment is shaped
+        by limited information and personal bias.
+    </p>
+    <p>
+        Now imagine asking hundreds of people, each seeing the problem from a
+        slightly different angle. While some will still be wrong, extreme
+        mistakes tend to cancel out.
+    </p>
+    <p>
+        Random Forest applies this same idea to decision trees.
+    </p>
+
+    <h2>Why a Single Decision Tree Is Not Enough</h2>
+    <p>
+        Decision trees are powerful because they can model complex, non-linear
+        relationships. Unfortunately, this flexibility makes them prone to
+        overfitting.
+    </p>
+    <p>
+        A single tree can learn very specific rules that perfectly explain the
+        training data but fail badly on new data. Small changes in the dataset
+        can produce completely different trees.
+    </p>
+    <p>
+        This instability is the core weakness Random Forest is designed to fix.
+    </p>
+
+    <h2>Bootstrapping: Teaching Trees Differently</h2>
+    <p>
+        Random Forest introduces diversity through bootstrapping. Each tree is
+        trained on a randomly sampled version of the dataset, drawn with
+        replacement.
+    </p>
+    <p>
+        As a result, some samples appear multiple times in one tree and not at
+        all in another. This forces trees to learn different patterns, even
+        though they all originate from the same data.
+    </p>
+    <p>
+        Bootstrapping alone already improves stability, but Random Forest goes
+        one step further.
+    </p>
+
+    <h2>Feature Randomness: Preventing Identical Thinking</h2>
+    <p>
+        If every tree always chose splits from the same strongest features,
+        the forest would behave like many copies of the same tree.
+    </p>
+    <p>
+        Random Forest avoids this by restricting each split to a random subset
+        of features. Trees are forced to explore alternative explanations and
+        interactions.
+    </p>
+    <p>
+        This feature-level randomness is what makes the ensemble truly diverse.
+    </p>
+
+    <h2>Understanding n_estimators</h2>
+    <p>
+        The <code>n_estimators</code> parameter controls how many trees are
+        included in the forest. With very few trees, predictions are unstable.
+        As more trees are added, variance decreases.
+    </p>
+    <p>
+        Beyond a certain point, adding more trees improves consistency rather
+        than accuracy. This is why Random Forest rarely overfits as the number
+        of trees grows.
+    </p>
+
+    <pre><code>from sklearn.ensemble import RandomForestClassifier
+
+model = RandomForestClassifier(
+    n_estimators=300,
+    max_depth=None,
+    random_state=42
+)
+
+model.fit(X_train, y_train)</code></pre>
+
+    <h2>Bias, Variance, and Why Random Forest Works</h2>
+    <p>
+        Random Forest primarily targets variance. Individual trees may overfit,
+        but averaging their predictions smooths out extreme behavior.
+    </p>
+    <p>
+        This is why Random Forest performs well even with default parameters.
+        It trades a small amount of bias for a large reduction in variance.
+    </p>
+    <p>
+        The result is a model that generalizes reliably across many datasets.
+    </p>
+
+    <h2>Interpretability and Feature Importance</h2>
+    <p>
+        While a single tree is easy to interpret, a forest is not. However,
+        Random Forest still provides useful insights through feature importance
+        measures.
+    </p>
+    <p>
+        These scores indicate which features contribute most to reducing
+        uncertainty across the ensemble, making Random Forest a practical
+        compromise between performance and interpretability.
+    </p>
+
+    <h2>When Should You Use Random Forest?</h2>
+    <p>
+        Random Forest is an excellent choice for structured and tabular data,
+        especially when datasets are noisy or moderately sized.
+    </p>
+    <p>
+        It is commonly used as a baseline model in production systems because
+        it is robust, easy to tune, and difficult to break.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+        Random Forest succeeds because it accepts a fundamental truth:
+        individual models are imperfect.
+    </p>
+    <p>
+        By embracing randomness and averaging many imperfect trees, it produces
+        predictions that are stable, reliable, and surprisingly powerful.
+    </p>
+
+    <div class="blog-tags">
+        <span class="blog-tag">Machine Learning</span>
+        <span class="blog-tag">Random Forest</span>
+        <span class="blog-tag">Ensemble Models</span>
+        <span class="blog-tag">Bagging</span>
+        <span class="blog-tag">Python</span>
+    </div>
+
+    <div class="blog-author">
+        <div class="blog-author-avatar">UK</div>
+        <div class="blog-author-info">
+            <h4>Udeesha Kularathne</h4>
+            <p>Full-Stack Engineer & AI/ML Enthusiast building intelligent systems.</p>
+        </div>
+    </div>
+
+    <div class="blog-nav">
+        <a href="why-ensembles-work.html" class="blog-nav-link">
+            <span class="blog-nav-label">Previous</span>
+            <span class="blog-nav-title">Why Ensembles Work</span>
+        </a>
+        <a href="gradient-boosting-explained.html" class="blog-nav-link">
+            <span class="blog-nav-label">Next</span>
+            <span class="blog-nav-title">Gradient Boosting Explained</span>
+        </a>
+    </div>
+</article>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">UK</span>
+                <p>Building the future with code and AI.</p>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html#about">About</a>
+                <a href="../projects.html">Projects</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Udeesha Kularathne. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

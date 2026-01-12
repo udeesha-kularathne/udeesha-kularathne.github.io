@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XGBoost Explained | Udeesha Kularathne</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/blog-post.css">
+</head>
+<body>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<div class="noise"></div>
+
+<nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+        <a href="../index.html" class="nav-logo"><span class="logo-text">UK</span></a>
+        <div class="nav-links">
+            <a href="../index.html#about" class="nav-link" data-text="About">About</a>
+            <a href="../index.html#experience" class="nav-link" data-text="Experience">Experience</a>
+            <a href="../projects.html" class="nav-link" data-text="Projects">Projects</a>
+            <a href="../blog.html" class="nav-link active" data-text="Blog">Blog</a>
+            <a href="../index.html#contact" class="nav-link" data-text="Contact">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-content">
+        <a href="../index.html#about" class="mobile-nav-link">About</a>
+        <a href="../index.html#experience" class="mobile-nav-link">Experience</a>
+        <a href="../projects.html" class="mobile-nav-link">Projects</a>
+        <a href="../blog.html" class="mobile-nav-link">Blog</a>
+        <a href="../index.html#contact" class="mobile-nav-link">Contact</a>
+    </div>
+</div>
+
+<section class="blog-hero">
+    <div class="blog-hero-content">
+        <div class="blog-breadcrumb">
+            <a href="../index.html">Home</a><span>/</span>
+            <a href="../blog.html">Blog</a><span>/</span>
+            <span>XGBoost</span>
+        </div>
+        <span class="blog-hero-category">AI/ML</span>
+        <h1 class="blog-hero-title">XGBoost Explained from First Principles</h1>
+        <div class="blog-hero-meta">
+            <span>January 30, 2026</span>
+            <span>16 min read</span>
+        </div>
+    </div>
+    <div class="hero-bg">
+        <div class="gradient-sphere gradient-sphere-1"></div>
+        <div class="gradient-sphere gradient-sphere-2"></div>
+        <div class="grid-lines"></div>
+    </div>
+</section>
+
+<div class="blog-cover">
+    <div class="blog-cover">
+        <div
+                class="blog-cover-image"
+                aria-label="Random Forest illustration"
+                style="background-image: url('../assets/images/blog/xgboost-cover.png');">
+        </div>
+    </div>
+</div>
+
+<article class="blog-content">
+    <p>
+        XGBoost is one of the most influential machine learning systems ever built
+        for tabular data. Its popularity did not come from marketing or hype,
+        but from consistently outperforming other methods in real-world,
+        high-pressure environments.
+    </p>
+    <p>
+        To understand XGBoost properly, it helps to think of it not as a single
+        algorithm, but as gradient boosting that has been engineered with
+        real constraints in mind: speed, overfitting, memory, and noisy data.
+    </p>
+
+    <h2>A Very Simple Overview</h2>
+    <p>
+        Imagine learning from your mistakes one step at a time. Each time you
+        make an error, you focus specifically on correcting that error next.
+        That is the core idea behind gradient boosting.
+    </p>
+    <p>
+        Now imagine doing this while also:
+        learning cautiously,
+        avoiding unnecessary complexity,
+        and stopping yourself from overreacting to noise.
+    </p>
+    <p>
+        That is essentially what XGBoost does.
+    </p>
+
+    <h2>Why Plain Gradient Boosting Was Not Enough</h2>
+    <p>
+        Traditional gradient boosting works well in theory, but early
+        implementations struggled in practice. Training was slow, memory usage
+        was high, and models were extremely sensitive to hyperparameters.
+    </p>
+    <p>
+        More importantly, classic boosting methods had no strong built-in
+        protection against overfitting. Trees could grow too deep, learning
+        very specific patterns that did not generalize.
+    </p>
+    <p>
+        XGBoost was designed to address these weaknesses without abandoning
+        the core idea of boosting.
+    </p>
+
+    <h2>Second-Order Learning: Why XGBoost Is Smarter</h2>
+    <p>
+        Most boosting methods rely only on first-order gradients, which tell the
+        model the direction in which the error should be reduced.
+    </p>
+    <p>
+        XGBoost goes a step further by also using second-order gradients.
+        These capture how the error changes, not just where it points.
+    </p>
+    <p>
+        This additional information allows XGBoost to make more informed,
+        stable updates. Instead of blindly correcting mistakes, it learns how
+        confident it should be about each correction.
+    </p>
+
+    <h2>Regularization Built into the Trees</h2>
+    <p>
+        One of XGBoost’s most important contributions is that it treats trees
+        as regularized models, not just structures that reduce loss.
+    </p>
+    <p>
+        Every split and every leaf comes with a cost. If a split does not
+        reduce the loss enough to justify its complexity, XGBoost rejects it.
+    </p>
+    <p>
+        This explicit penalty on complexity is a major reason XGBoost generalizes
+        so well compared to earlier boosting approaches.
+    </p>
+
+    <h2>Shrinkage and Controlled Learning</h2>
+    <p>
+        XGBoost applies shrinkage through a learning rate. Each tree contributes
+        only a small portion to the final model.
+    </p>
+    <p>
+        This is similar to learning slowly and cautiously rather than making
+        drastic changes based on limited evidence. Slower learning often leads
+        to better long-term performance.
+    </p>
+
+    <pre><code>import xgboost as xgb
+
+model = xgb.XGBClassifier(
+    n_estimators=400,
+    learning_rate=0.05,
+    max_depth=4,
+    subsample=0.8,
+    colsample_bytree=0.8
+)
+
+model.fit(X_train, y_train)</code></pre>
+
+    <h2>Handling Missing Data Automatically</h2>
+    <p>
+        Real-world data is messy. Missing values are unavoidable.
+        XGBoost handles missing data natively by learning which direction
+        to take when a value is absent.
+    </p>
+    <p>
+        Instead of forcing imputation, the model treats missingness as
+        potentially informative, which often leads to better performance
+        on practical datasets.
+    </p>
+
+    <h2>Why XGBoost Is Fast</h2>
+    <p>
+        XGBoost is fast because it was designed with systems-level efficiency
+        in mind. It uses parallel tree construction, cache-aware memory access,
+        and optimized data structures.
+    </p>
+    <p>
+        These engineering decisions allowed it to scale to datasets that were
+        previously impractical for boosting methods.
+    </p>
+
+    <h2>When Should You Use XGBoost?</h2>
+    <p>
+        XGBoost excels on structured and tabular data where relationships are
+        complex but not spatial or sequential. It is widely used in credit
+        scoring, fraud detection, forecasting, and ranking problems.
+    </p>
+    <p>
+        However, it is not a universal solution. For images, audio, or raw text,
+        deep learning models are often more appropriate.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+        XGBoost did not invent gradient boosting — it refined it.
+        By combining solid mathematical foundations with careful engineering,
+        it turned a powerful idea into a production-ready system.
+    </p>
+    <p>
+        Understanding XGBoost is less about memorizing parameters and more about
+        understanding why controlling complexity, learning speed, and
+        optimization stability matters in real-world machine learning.
+    </p>
+
+    <div class="blog-tags">
+        <span class="blog-tag">Machine Learning</span>
+        <span class="blog-tag">XGBoost</span>
+        <span class="blog-tag">Gradient Boosting</span>
+        <span class="blog-tag">Regularization</span>
+        <span class="blog-tag">Python</span>
+    </div>
+
+    <div class="blog-author">
+        <div class="blog-author-avatar">UK</div>
+        <div class="blog-author-info">
+            <h4>Udeesha Kularathne</h4>
+            <p>Full-Stack Engineer & AI/ML Enthusiast building intelligent systems.</p>
+        </div>
+    </div>
+
+    <div class="blog-nav">
+        <a href="random-forest-explained.html" class="blog-nav-link">
+            <span class="blog-nav-label">Previous</span>
+            <span class="blog-nav-title">Random Forest Explained</span>
+        </a>
+        <a href="gradient-boosting-explained.html" class="blog-nav-link">
+            <span class="blog-nav-label">Next</span>
+            <span class="blog-nav-title">Gradient Boosting Explained</span>
+        </a>
+    </div>
+</article>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">UK</span>
+                <p>Building the future with code and AI.</p>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html#about">About</a>
+                <a href="../projects.html">Projects</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Udeesha Kularathne. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

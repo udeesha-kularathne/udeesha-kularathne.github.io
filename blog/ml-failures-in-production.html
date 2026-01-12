@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How ML Models Fail in Production | Udeesha Kularathne</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/blog-post.css">
+</head>
+<body>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<div class="noise"></div>
+
+<nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+        <a href="../index.html" class="nav-logo"><span class="logo-text">UK</span></a>
+        <div class="nav-links">
+            <a href="../index.html#about" class="nav-link" data-text="About">About</a>
+            <a href="../index.html#experience" class="nav-link" data-text="Experience">Experience</a>
+            <a href="../projects.html" class="nav-link" data-text="Projects">Projects</a>
+            <a href="../blog.html" class="nav-link active" data-text="Blog">Blog</a>
+            <a href="../index.html#contact" class="nav-link" data-text="Contact">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-content">
+        <a href="../index.html#about" class="mobile-nav-link">About</a>
+        <a href="../index.html#experience" class="mobile-nav-link">Experience</a>
+        <a href="../projects.html" class="mobile-nav-link">Projects</a>
+        <a href="../blog.html" class="mobile-nav-link">Blog</a>
+        <a href="../index.html#contact" class="mobile-nav-link">Contact</a>
+    </div>
+</div>
+
+<section class="blog-hero">
+    <div class="blog-hero-content">
+        <div class="blog-breadcrumb">
+            <a href="../index.html">Home</a><span>/</span>
+            <a href="../blog.html">Blog</a><span>/</span>
+            <span>Production ML</span>
+        </div>
+        <span class="blog-hero-category">AI/ML</span>
+        <h1 class="blog-hero-title">How Machine Learning Models Fail in Production</h1>
+        <div class="blog-hero-meta">
+            <span>February 8, 2026</span>
+            <span>25 min read</span>
+        </div>
+    </div>
+    <div class="hero-bg">
+        <div class="gradient-sphere gradient-sphere-1"></div>
+        <div class="gradient-sphere gradient-sphere-2"></div>
+        <div class="grid-lines"></div>
+    </div>
+</section>
+
+<div class="blog-cover">
+    <div class="blog-cover">
+        <div
+                class="blog-cover-image"
+                aria-label="Random Forest illustration"
+                style="background-image: url('../assets/images/blog/ml-production-failures-cover.png');">
+        </div>
+    </div>
+</div>
+
+
+<article class="blog-content">
+    <p>
+        Most machine learning models do not fail because the algorithm is bad.
+        They fail because production is a different universe than a notebook.
+        In a notebook, the data is static, clean, and “cooperative.” In production,
+        the data changes, the pipeline evolves, users behave differently, and the system
+        has constraints like latency and cost.
+    </p>
+    <p>
+        The scary part is that production failures are often silent. The API still returns
+        predictions, dashboards still look “normal,” and the model can continue operating
+        while becoming steadily less useful. This article breaks down the most common ways
+        ML systems fail after deployment, how to recognize the symptoms early, and how
+        experienced teams design systems that are resilient to change.
+    </p>
+
+    <h2>A Very Simple Overview </h2>
+    <p>
+        Training a model is like studying for an exam using last year’s questions.
+        If the exam is exactly the same, you’ll score very high. But in real life,
+        the “exam” changes constantly: new user behavior, new products, different markets,
+        different lighting conditions, new fraud patterns, new slang, new sensors, and
+        unexpected edge cases.
+    </p>
+    <p>
+        Production ML is that exam. It changes every day, sometimes every hour.
+        A model is not “done” when it is trained — it becomes a living component
+        inside a system. And like any system component, it needs monitoring, maintenance,
+        and clear failure handling.
+    </p>
+    <p>
+        Another simple way to think about it: a model is like a GPS route planner.
+        It can be perfect on a quiet day. But if roads close, traffic patterns shift,
+        or the map is outdated, you can still get directions — just not good directions.
+        That’s exactly how production ML fails: you still get outputs, but the outputs
+        stop matching reality.
+    </p>
+
+    <h2>Failure #1: Data Distribution Shift</h2>
+    <p>
+        Most ML assumes that the data you will see tomorrow is similar to the data you saw
+        yesterday. In production, this assumption breaks all the time. This is called
+        <strong>data distribution shift</strong> (often shortened to “data drift”).
+    </p>
+    <p>
+        Example: You train a demand forecasting model using last year’s sales patterns.
+        Then a competitor opens nearby, your product prices change, supply chain issues happen,
+        or a holiday season begins. Even if the model logic is correct, the inputs it receives
+        now represent a different world than the one it learned.
+    </p>
+    <p>
+        There are two practical things to understand here:
+        (1) data drift does not always mean the model is wrong, but it increases risk;
+        (2) drift can happen slowly (gradual change) or suddenly (shock events).
+    </p>
+    <p>
+        What to monitor in real systems:
+        feature distributions (mean/variance/range), missing-value rates, category frequencies,
+        and “unknown” category counts. For example, if you suddenly see a spike in unseen product IDs,
+        new device types, or new locations, your model is operating outside its training comfort zone.
+    </p>
+    <p>
+        How teams mitigate this:
+        retraining schedules, drift-triggered retraining, rolling windows, and “safe fallback”
+        rules when drift becomes too large (for example, revert to a baseline model or conservative policy).
+    </p>
+
+    <h2>Failure #2: Training-Serving Skew</h2>
+    <p>
+        Training-serving skew happens when the model sees one reality during training and a different
+        reality during inference. This is not a “data drift over time” problem — it’s a pipeline
+        mismatch problem caused by engineering differences.
+    </p>
+    <p>
+        Common ways this happens:
+        the training pipeline uses one normalization method while production uses another,
+        features are calculated from different time windows,
+        categorical encoding differs,
+        or some feature is present during training but frequently missing in production.
+    </p>
+    <p>
+        A simple example: during training you compute “average purchase value over last 30 days”
+        from a complete historical dataset. In production, a new user might have only 2 days of history.
+        If your pipeline silently replaces missing history with zeros, you’ve changed the meaning of the feature.
+        The model will interpret “0” as “low spender,” but in reality it means “unknown.”
+    </p>
+    <p>
+        Symptoms in production:
+        sudden accuracy drop right after deployment, strange prediction distributions,
+        confidence scores becoming extreme (too many near 0 or near 1), or performance differences
+        between environments.
+    </p>
+    <p>
+        How teams prevent this:
+        one shared feature pipeline for training and serving,
+        feature validation tests,
+        schema versioning,
+        and “data contracts” that enforce consistent definitions.
+        Many mature teams treat feature computation as a first-class system, not a small preprocessing script.
+    </p>
+
+    <h2>Failure #3: Feedback Loops</h2>
+    <p>
+        Feedback loops happen when model predictions influence the data that the model will later train on.
+        This is extremely common in recommenders, ranking systems, fraud detection, and even moderation systems.
+    </p>
+    <p>
+        Imagine a recommender system: it shows users the “top” items.
+        Users click what they see. Now your training data becomes “what users clicked from what we showed.”
+        If you only show what you already believe is good, you stop collecting data about alternatives.
+        The model becomes increasingly confident in a narrow view of the world.
+    </p>
+    <p>
+        Over time this creates problems like:
+        reduced diversity,
+        popularity bias (the rich get richer),
+        filter bubbles,
+        and systematic neglect of minority preferences.
+        In business terms: you might be losing long-tail revenue while metrics look fine.
+    </p>
+    <p>
+        How teams handle this:
+        controlled exploration (e.g., epsilon-greedy, Thompson sampling),
+        randomization buckets,
+        and offline evaluation that accounts for exposure bias.
+        This is why production recommendation is more than “train a model and rank items.”
+    </p>
+
+    <h2>Failure #4: Wrong Objective, Right Accuracy</h2>
+    <p>
+        One of the most expensive mistakes in production ML is optimizing the wrong metric.
+        Accuracy can look impressive while the model creates negative business outcomes.
+    </p>
+    <p>
+        Example: A fraud model with 99% accuracy might still be useless if fraud cases are rare.
+        If only 1% of transactions are fraud, a model that predicts “not fraud” always will have 99% accuracy.
+        In production, the real question is: how many fraud cases do we catch, and how many legitimate customers
+        do we annoy with false alerts?
+    </p>
+    <p>
+        Real production optimization usually needs cost-aware metrics:
+        precision/recall, F1, PR-AUC,
+        cost-weighted loss,
+        expected value,
+        or custom business KPIs (like chargeback cost, customer churn impact, manual review capacity).
+    </p>
+    <p>
+        Another classic issue: optimizing for “clicks” may harm “retention.”
+        Users might click sensational content, but later stop trusting the platform.
+        The model did its job — it optimized clicks — but the product loses in the long term.
+    </p>
+
+    <h2>Failure #5: Hidden Assumptions</h2>
+    <p>
+        Every model contains assumptions, even when we don’t say them out loud.
+        Linear models assume additive relationships.
+        Many time-series approaches assume stable seasonality.
+        Classification models assume the label definition stays stable.
+    </p>
+    <p>
+        The dangerous thing is that when assumptions break, models usually don’t throw errors.
+        They confidently output a number, because mathematically they can.
+        But the number no longer means what you think it means.
+    </p>
+    <p>
+        Examples of hidden assumptions breaking:
+        a sentiment model trained on social media language is deployed in a call center,
+        a defect detection model trained on one camera is deployed with a new lens,
+        a customer risk model trained on one region is deployed internationally.
+        The model appears to work, but the meaning of features shifts.
+    </p>
+    <p>
+        What mature teams do:
+        they document assumptions explicitly,
+        validate them during deployment,
+        and create monitoring signals that indicate when those assumptions are no longer true
+        (for example, language shift, camera calibration drift, new population distributions).
+    </p>
+
+    <h2>Failure #6: Concept Drift Over Time</h2>
+    <p>
+        Concept drift is different from data drift. Data drift is about the input distribution changing.
+        Concept drift is about the relationship between input and label changing.
+    </p>
+    <p>
+        Example: “Risky transaction pattern” evolves as fraudsters adapt.
+        Or in HR, the meaning of “good candidate” changes when the company’s strategy changes.
+        Or in retail, a “high-value customer” changes during inflation.
+    </p>
+    <p>
+        This is especially tricky because the model may still be receiving similar-looking input distributions,
+        but the true label generation process has changed. Your model might be predicting yesterday’s truth.
+    </p>
+    <p>
+        How teams detect concept drift:
+        delayed ground truth tracking,
+        rolling evaluation windows,
+        shadow deployments,
+        monitoring business outcomes (not just model outputs),
+        and using human feedback loops carefully.
+    </p>
+
+    <h2>Failure #7: Lack of Monitoring and Explainability</h2>
+    <p>
+        Many ML deployments fail because the model becomes “set and forget.”
+        Without monitoring, you don’t notice drift, skew, feedback loops, or performance collapse until damage is done.
+    </p>
+    <p>
+        Monitoring should happen on multiple layers:
+        (1) data quality: missing values, range checks, distribution shifts;
+        (2) prediction health: score distribution, confidence calibration, outlier rates;
+        (3) outcome tracking: real-world business or operational results.
+    </p>
+    <p>
+        Explainability adds another layer of safety. When the model changes behavior,
+        explanations help you answer: “What features started driving decisions?”
+        If feature importance suddenly shifts to unexpected variables, it often indicates drift, leakage, or bugs.
+    </p>
+    <p>
+        A practical principle: monitor what you can measure now (inputs/predictions),
+        and also track what you can measure later (true outcomes).
+        Many failures are caught early by simply watching “prediction distributions” and “feature missingness.”
+    </p>
+
+    <h2>Failure #8: Overconfidence and Automation Bias</h2>
+    <p>
+        Even when models are wrong, humans tend to trust them too much.
+        This is called automation bias. If a model gives a confident output,
+        people may stop using their judgment — especially when the model is packaged as “AI.”
+    </p>
+    <p>
+        This is why calibration matters. A model that says “95% confident” should truly be correct about 95% of the time.
+        Many models are not naturally calibrated, and overconfidence can be a production hazard.
+    </p>
+    <p>
+        In high-stakes settings, teams often design “human-in-the-loop” workflows:
+        the model suggests, the human decides, and uncertainty triggers manual review.
+        The goal is not just accuracy — it is safe decision-making.
+    </p>
+    <p>
+        A simple example: If confidence is low, show “needs review” instead of giving a strong recommendation.
+        This design alone prevents many production disasters.
+    </p>
+
+    <h2>Failure #9: Engineering and System Constraints</h2>
+    <p>
+        Production models live inside systems with real constraints: latency budgets, memory limits,
+        hardware differences, concurrency spikes, and uptime requirements.
+    </p>
+    <p>
+        A model that is “great” but takes 3 seconds per prediction is often unusable for real-time experiences.
+        A model that requires heavy preprocessing might break when a feature service is slow.
+        A model that works on a GPU in development may be deployed on CPU in production and become too slow.
+    </p>
+    <p>
+        This is why ML engineering is part of software engineering:
+        caching, batching, asynchronous inference, fallback logic, rate limiting,
+        and careful resource planning often matter as much as model accuracy.
+    </p>
+    <p>
+        Another overlooked point: dependency updates can break models.
+        A minor library change can alter preprocessing, numerical precision, or tokenization.
+        Mature teams version everything: code, features, model artifacts, and even data snapshots.
+    </p>
+
+    <h2>How Successful Systems Avoid These Failures</h2>
+    <p>
+        Successful production ML teams don’t treat ML as “train and deploy.”
+        They treat ML as “design, validate, deploy, monitor, adapt.”
+    </p>
+    <p>
+        Practical strategies used in mature systems:
+        monitoring pipelines for inputs and outputs,
+        drift dashboards and alerts,
+        retraining policies (scheduled + triggered),
+        A/B testing or shadow deployments,
+        model versioning and rollback,
+        and strong validation tests for feature pipelines.
+    </p>
+    <p>
+        They also plan for failure as a normal event.
+        A good production system has safe defaults:
+        if the model is unavailable, if drift is too high, if inputs are missing,
+        the system should degrade gracefully and still behave predictably.
+    </p>
+    <p>
+        Finally, mature teams connect model evaluation to business reality:
+        they measure downstream impact, not just offline metrics.
+        The model is successful only if the system becomes better in the real world.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+        Machine learning in production is not about picking the fanciest algorithm.
+        It is about building systems that survive change, uncertainty, noisy data,
+        evolving user behavior, and imperfect measurements.
+    </p>
+    <p>
+        The core lesson is simple but powerful: a trained model is only the beginning.
+        Real ML engineering happens after deployment — when reality starts pushing back.
+    </p>
+
+    <div class="blog-tags">
+        <span class="blog-tag">Machine Learning</span>
+        <span class="blog-tag">MLOps</span>
+        <span class="blog-tag">Production Systems</span>
+        <span class="blog-tag">Data Drift</span>
+        <span class="blog-tag">System Design</span>
+    </div>
+
+    <div class="blog-author">
+        <div class="blog-author-avatar">UK</div>
+        <div class="blog-author-info">
+            <h4>Udeesha Kularathne</h4>
+            <p>Full-Stack Engineer & AI/ML Enthusiast building real-world intelligent systems.</p>
+        </div>
+    </div>
+
+    <div class="blog-nav">
+        <a href="linear-regression-explained.html" class="blog-nav-link">
+            <span class="blog-nav-label">Previous</span>
+            <span class="blog-nav-title">Linear Regression Explained</span>
+        </a>
+        <a href="random-forest-explained.html" class="blog-nav-link">
+            <span class="blog-nav-label">Next</span>
+            <span class="blog-nav-title">Random Forest Explained</span>
+        </a>
+    </div>
+</article>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">UK</span>
+                <p>Building the future with code and AI.</p>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html#about">About</a>
+                <a href="../projects.html">Projects</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Udeesha Kularathne. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

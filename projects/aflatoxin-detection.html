@@ -1,0 +1,384 @@
+<!--projects/aflatoxin-detection.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aflatoxin Detection & Yield Prediction System | Udeesha Kularathne</title>
+    <meta name="description" content="A full-stack AI system for aflatoxin risk detection and crop yield prediction with explainable ML, geo analytics, and decision-support dashboards.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/projects.css">
+
+</head>
+<body>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<div class="noise"></div>
+
+<!-- Navigation -->
+<nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+        <a href="../index.html" class="nav-logo">
+            <span class="logo-text">UK</span>
+        </a>
+        <div class="nav-links">
+            <a href="../index.html#about" class="nav-link" data-text="About">About</a>
+            <a href="../index.html#experience" class="nav-link" data-text="Experience">Experience</a>
+            <a href="../projects.html" class="nav-link active" data-text="Projects">Projects</a>
+            <a href="../blog.html" class="nav-link" data-text="Blog">Blog</a>
+            <a href="../index.html#contact" class="nav-link" data-text="Contact">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Navigation -->
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-content">
+        <a href="../index.html#about" class="mobile-nav-link">About</a>
+        <a href="../index.html#experience" class="mobile-nav-link">Experience</a>
+        <a href="../projects.html" class="mobile-nav-link">Projects</a>
+        <a href="../blog.html" class="mobile-nav-link">Blog</a>
+        <a href="../index.html#contact" class="mobile-nav-link">Contact</a>
+    </div>
+</div>
+
+<!-- Project Hero -->
+<section class="project-hero">
+    <div class="container">
+        <div class="project-hero-content">
+            <div class="project-breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../projects.html">Projects</a>
+                <span>/</span>
+                <span>Aflatoxin & Yield</span>
+            </div>
+            <h1 class="project-hero-title">Aflatoxin Detection & Yield Prediction System</h1>
+            <p class="project-hero-description">
+                A full-stack ML decision-support system for agriculture that predicts aflatoxin risk and crop yield,
+                provides geo-aware insights, and delivers transparent explanations through feature importance and
+                interpretable model outputs.
+            </p>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Full-Stack Developer & ML Engineer</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Timeline</span>
+                    <span class="meta-value">2023 - 2024</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Category</span>
+                    <span class="meta-value">AI/ML, Web Application</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-bg">
+        <div class="gradient-sphere gradient-sphere-1"></div>
+        <div class="gradient-sphere gradient-sphere-2"></div>
+        <div class="grid-lines"></div>
+    </div>
+</section>
+
+<!-- Project Image -->
+<div class="container">
+    <div class="blog-cover">
+        <div
+                class="project-cover-image"
+                aria-label="Random Forest illustration"
+                style="background-image: url('../assets/images/projects/aflatoxin.png');">
+        </div>
+    </div>
+
+</div>
+
+<!-- Overview -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Project Overview</h2>
+
+        <p>
+            This project was built to convert complex agriculture datasets into practical, decision-ready outputs.
+            The system combines predictive modeling with a dashboard-driven interface so that users can assess
+            contamination risk, estimate yield outcomes, and understand the key environmental or management factors
+            influencing those predictions.
+        </p>
+
+        <p>
+            The solution follows an end-to-end workflow: raw datasets are cleaned and standardized, location-related
+            fields are normalized into consistent geographic groups, and a feature engineering layer prepares inputs
+            for both regression and classification tasks. The ML layer supports multiple model families and evaluation
+            workflows, while explainability tooling (feature importance + local/global interpretations) ensures outputs
+            remain transparent and defensible.
+        </p>
+
+        <p>
+            The frontend is designed as a data-heavy analytics interface (EDA, prediction forms, geo summaries,
+            safe-range guidance, and feature importance exploration). The backend exposes structured APIs for data and
+            ML services, keeping the UI decoupled from model internals and supporting long-term maintainability.
+        </p>
+
+        <p style="font-size: 0.9rem; color: var(--text-muted);">
+            Note: Specific datasets, thresholds, and proprietary optimization details are intentionally abstracted
+            to respect commercial and confidentiality constraints.
+        </p>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Key Features</h2>
+        <div class="features-grid">
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/>
+                    </svg>
+                </div>
+                <h3>Aflatoxin Risk Classification</h3>
+                <p>
+                    Predicts contamination risk as a classification task using structured preprocessing pipelines and
+                    ensemble modeling, returning both decisions and confidence-oriented outputs.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 3v18h18"/>
+                        <path d="M7 15l3-3 3 2 5-6"/>
+                    </svg>
+                </div>
+                <h3>Yield Prediction (Regression)</h3>
+                <p>
+                    Estimates expected yield using regression models optimized for tabular data,
+                    enabling scenario comparisons across different environmental and management conditions.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <h3>Time & Location Normalization</h3>
+                <p>
+                    Includes robust preprocessing to standardize inconsistent field inputs (such as location naming),
+                    enabling reliable aggregation, geo summaries, and stable model inputs.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 19h16"/>
+                        <path d="M4 15l4-4 4 3 6-7"/>
+                    </svg>
+                </div>
+                <h3>Explainable AI & Feature Importance</h3>
+                <p>
+                    Provides multi-method explainability (linear coefficients, tree importances, permutation tests,
+                    SHAP, and local explanations) to justify predictions and improve trust.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l3 6 7 .5-5 4.2 1.6 6.8L12 16l-6.6 3.5L7 12.7 2 8.5 9 8l3-6z"/>
+                    </svg>
+                </div>
+                <h3>Safe-Range Guidance</h3>
+                <p>
+                    Computes practical “safe/adjustable” ranges for key inputs to support decision-making,
+                    enabling users to explore changes that may reduce risk or improve outcomes.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M7 7h10M7 12h10M7 17h10"/>
+                    </svg>
+                </div>
+                <h3>Analytics Dashboard & EDA</h3>
+                <p>
+                    A React-based analytics interface for exploratory data analysis, prediction workflows, geo averages,
+                    and interpretability outputs—structured for clarity and fast navigation.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="tech-stack-section">
+    <div class="container">
+        <h2>Technology & Engineering Stack</h2>
+        <div class="tech-grid">
+            <span class="tech-item">React</span>
+            <span class="tech-item">JavaScript</span>
+            <span class="tech-item">Node.js</span>
+            <span class="tech-item">Express.js</span>
+            <span class="tech-item">REST APIs</span>
+
+            <span class="tech-item">Supabase</span>
+            <span class="tech-item">PostgreSQL</span>
+
+            <span class="tech-item">Python</span>
+            <span class="tech-item">scikit-learn</span>
+            <span class="tech-item">XGBoost</span>
+            <span class="tech-item">LightGBM</span>
+            <span class="tech-item">Random Forest</span>
+            <span class="tech-item">Stacking Ensembles</span>
+
+            <span class="tech-item">Pandas</span>
+            <span class="tech-item">NumPy</span>
+            <span class="tech-item">Matplotlib</span>
+
+            <span class="tech-item">SHAP</span>
+            <span class="tech-item">LIME</span>
+            <span class="tech-item">Permutation Importance</span>
+
+            <span class="tech-item">Modular Backend Design</span>
+            <span class="tech-item">Preprocessing Pipelines</span>
+            <span class="tech-item">Model Evaluation Workflows</span>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Project Gallery</h2>
+        <p>Screenshots and visualizations from the system (dashboard, geo summaries, and explainability views).</p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <path d="M21 15l-5-5L5 21"/>
+                </svg>
+            </div>
+            <div class="gallery-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <path d="M21 15l-5-5L5 21"/>
+                </svg>
+            </div>
+            <div class="gallery-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <path d="M21 15l-5-5L5 21"/>
+                </svg>
+            </div>
+            <div class="gallery-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <path d="M21 15l-5-5L5 21"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Results -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Results & Engineering Impact</h2>
+
+        <p>
+            The main value of this system is the end-to-end integration of predictive modeling with a usable,
+            decision-support interface. The workflow is not limited to “training a model”—it includes robust
+            preprocessing, repeatable evaluation, explainability outputs, and a UI that makes analysis accessible
+            to non-technical users while still remaining detailed enough for technical review.
+        </p>
+
+        <p>
+            The ML layer demonstrates a practical blend of model families for tabular prediction problems,
+            including ensemble learning strategies and pipeline-based preprocessing. This design reduces risk of
+            inconsistent transformations, supports reproducibility, and keeps inference aligned with training-time
+            logic. Explainability tooling adds transparency by validating which factors drive risk and yield outputs,
+            supporting trust and accountability.
+        </p>
+
+        <p>
+            From an engineering standpoint, the project emphasizes clear separation of concerns: UI components
+            handle exploration and visualization, while backend services expose stable APIs and isolate ML logic.
+            This structure supports maintainability, makes the system easier to extend with additional analytics
+            modules, and keeps model changes decoupled from interface development.
+        </p>
+    </div>
+</section>
+
+<!-- Navigation -->
+<section class="container">
+    <div class="project-nav">
+        <a href="pos-analytics.html" class="project-nav-link">
+            <span class="project-nav-label">Previous Project</span>
+            <span class="project-nav-title">POS 2.0 - Retail Analytics</span>
+        </a>
+        <a href="employee-management.html" class="project-nav-link">
+            <span class="project-nav-label">Next Project</span>
+            <span class="project-nav-title">Employee Management System</span>
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">Udeesha Kularathne</span>
+                <p>Building the future with code and AI.</p>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#experience">Experience</a>
+                <a href="../projects.html">Projects</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/udeeshakularathne" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                        <rect x="2" y="9" width="4" height="12"/>
+                        <circle cx="4" cy="4" r="2"/>
+                    </svg>
+                </a>
+                <a href="mailto:umahinsab@gmail.com" aria-label="Email">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Udeesha Kularathne. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

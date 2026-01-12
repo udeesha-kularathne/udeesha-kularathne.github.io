@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Regression Explained | Udeesha Kularathne</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/blog-post.css">
+</head>
+<body>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<div class="noise"></div>
+
+<nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+        <a href="../index.html" class="nav-logo"><span class="logo-text">UK</span></a>
+        <div class="nav-links">
+            <a href="../index.html#about" class="nav-link" data-text="About">About</a>
+            <a href="../index.html#experience" class="nav-link" data-text="Experience">Experience</a>
+            <a href="../projects.html" class="nav-link" data-text="Projects">Projects</a>
+            <a href="../blog.html" class="nav-link active" data-text="Blog">Blog</a>
+            <a href="../index.html#contact" class="nav-link" data-text="Contact">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-content">
+        <a href="../index.html#about" class="mobile-nav-link">About</a>
+        <a href="../index.html#experience" class="mobile-nav-link">Experience</a>
+        <a href="../projects.html" class="mobile-nav-link">Projects</a>
+        <a href="../blog.html" class="mobile-nav-link">Blog</a>
+        <a href="../index.html#contact" class="mobile-nav-link">Contact</a>
+    </div>
+</div>
+
+<section class="blog-hero">
+    <div class="blog-hero-content">
+        <div class="blog-breadcrumb">
+            <a href="../index.html">Home</a><span>/</span>
+            <a href="../blog.html">Blog</a><span>/</span>
+            <span>Linear Regression</span>
+        </div>
+        <span class="blog-hero-category">AI/ML</span>
+        <h1 class="blog-hero-title">Linear Regression Explained from First Principles</h1>
+        <div class="blog-hero-meta">
+            <span>February 3, 2026</span>
+            <span>17 min read</span>
+        </div>
+    </div>
+    <div class="hero-bg">
+        <div class="gradient-sphere gradient-sphere-1"></div>
+        <div class="gradient-sphere gradient-sphere-2"></div>
+        <div class="grid-lines"></div>
+    </div>
+</section>
+
+<div class="blog-cover">
+    <div class="blog-cover">
+        <div
+                class="blog-cover-image"
+                aria-label="Random Forest illustration"
+                style="background-image: url('../assets/images/blog/linear-regression-cover.png');">
+        </div>
+    </div>
+</div>
+
+
+<article class="blog-content">
+    <p>
+        Linear regression is often treated as a “starter” algorithm, something
+        you learn quickly before moving on to more powerful models. In reality,
+        linear regression is one of the most important ideas in all of machine
+        learning — not because it is complex, but because it defines how we
+        think about prediction, error, and learning.
+    </p>
+    <p>
+        Many modern models, from gradient boosting to neural networks, are
+        extensions of the same core principle that linear regression introduces.
+        If you truly understand linear regression, the rest of machine learning
+        becomes much easier to reason about.
+    </p>
+
+    <h2>A Very Simple Overview </h2>
+    <p>
+        Imagine you are trying to estimate the price of a house. You notice that
+        as the size of the house increases, the price usually increases as well.
+        The relationship is not perfect, but there is a clear trend.
+    </p>
+    <p>
+        Linear regression tries to capture that trend using a straight line.
+        The goal is not to predict every house perfectly, but to find the line
+        that best represents the overall relationship between size and price.
+    </p>
+    <p>
+        That idea — capturing a trend rather than memorizing individual points —
+        is at the heart of all predictive modeling.
+    </p>
+
+    <h2>What Does “Linear” Actually Mean?</h2>
+    <p>
+        The word “linear” is often misunderstood. It does not mean the problem
+        itself is simple. It means that the model assumes the output can be
+        expressed as a weighted sum of the inputs.
+    </p>
+    <p>
+        Each feature contributes independently to the final prediction, scaled
+        by a learned weight. When one feature changes, its effect on the output
+        does not depend on the values of other features.
+    </p>
+    <p>
+        This assumption is powerful because it makes the model interpretable,
+        but it also limits what kinds of relationships the model can represent.
+    </p>
+
+    <h2>Understanding the Equation</h2>
+    <p>
+        At its core, linear regression models the relationship between inputs
+        and output using a simple mathematical form:
+    </p>
+
+    <pre><code>y = w1*x1 + w2*x2 + ... + wn*xn + b</code></pre>
+
+    <p>
+        Each weight represents how strongly a feature influences the prediction.
+        The bias term shifts the entire prediction up or down.
+    </p>
+    <p>
+        Importantly, the model is not trying to pass through every data point.
+        It is trying to find the best compromise — the line that minimizes
+        overall error across the dataset.
+    </p>
+
+    <h2>How Does the Model Decide What Is “Best”?</h2>
+    <p>
+        To evaluate how good a particular line is, linear regression uses a
+        loss function. The most common choice is Mean Squared Error (MSE),
+        which measures the average squared distance between predicted values
+        and actual values.
+    </p>
+    <p>
+        Squaring the error has an important effect: large mistakes are penalized
+        much more heavily than small ones. This encourages the model to avoid
+        extreme errors, even if it means being slightly off in many places.
+    </p>
+    <p>
+        The “best” model is simply the one that produces the smallest loss.
+    </p>
+
+    <h2>Learning Through Gradients</h2>
+    <p>
+        Linear regression does not magically know the correct weights. It learns
+        them by repeatedly adjusting the weights in a way that reduces the loss.
+        This process is known as gradient descent.
+    </p>
+    <p>
+        The gradient tells the model how the loss would change if a weight were
+        slightly increased or decreased. By following this direction step by
+        step, the model gradually moves toward a better solution.
+    </p>
+    <p>
+        This idea — compute error, compute gradient, update parameters — appears
+        again and again in machine learning, including in deep learning.
+    </p>
+
+    <pre><code>from sklearn.linear_model import LinearRegression
+
+model = LinearRegression()
+model.fit(X_train, y_train)</code></pre>
+
+    <h2>Assumptions Behind Linear Regression</h2>
+    <p>
+        Linear regression makes several assumptions that are often overlooked.
+        It assumes that relationships are linear, errors are independent,
+        variance is constant across inputs, and features are not strongly
+        correlated with each other.
+    </p>
+    <p>
+        When these assumptions hold reasonably well, linear regression performs
+        surprisingly well. When they do not, the model can produce misleading
+        coefficients and unreliable predictions.
+    </p>
+    <p>
+        Understanding these assumptions is critical when using linear regression
+        in real-world systems, especially in scientific or economic analysis.
+    </p>
+
+    <h2>Bias, Variance, and Limitations</h2>
+    <p>
+        Linear regression is a high-bias, low-variance model. It prefers simple
+        explanations and resists overfitting, even when the data contains
+        complex patterns.
+    </p>
+    <p>
+        This makes it stable and predictable, but also limits its expressive
+        power. When relationships are highly non-linear or involve complex
+        interactions, linear regression will systematically underfit.
+    </p>
+    <p>
+        Many advanced models exist precisely to overcome these limitations,
+        often at the cost of interpretability and stability.
+    </p>
+
+    <h2>When Should You Use Linear Regression?</h2>
+    <p>
+        Linear regression is ideal when interpretability matters, when data is
+        limited, or when you need a transparent baseline model.
+    </p>
+    <p>
+        It is widely used in economics, forecasting, experimentation analysis,
+        and as a diagnostic tool to understand relationships before applying
+        more complex models.
+    </p>
+    <p>
+        In production systems, linear regression often serves as a reliable
+        fallback or baseline that is easy to monitor and reason about.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+        Linear regression teaches one of the most important lessons in machine
+        learning: define a model, measure how wrong it is, and improve it using
+        feedback.
+    </p>
+    <p>
+        While more advanced models may outperform it in raw accuracy, the
+        principles introduced by linear regression form the foundation on which
+        modern machine learning is built.
+    </p>
+
+    <div class="blog-tags">
+        <span class="blog-tag">Machine Learning</span>
+        <span class="blog-tag">Linear Regression</span>
+        <span class="blog-tag">Optimization</span>
+        <span class="blog-tag">Loss Functions</span>
+        <span class="blog-tag">Python</span>
+    </div>
+
+    <div class="blog-author">
+        <div class="blog-author-avatar">UK</div>
+        <div class="blog-author-info">
+            <h4>Udeesha Kularathne</h4>
+            <p>Full-Stack Engineer & AI/ML Enthusiast building intelligent systems.</p>
+        </div>
+    </div>
+
+    <div class="blog-nav">
+        <a href="xgboost-explained.html" class="blog-nav-link">
+            <span class="blog-nav-label">Previous</span>
+            <span class="blog-nav-title">XGBoost Explained</span>
+        </a>
+        <a href="random-forest-explained.html" class="blog-nav-link">
+            <span class="blog-nav-label">Next</span>
+            <span class="blog-nav-title">Random Forest Explained</span>
+        </a>
+    </div>
+</article>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">UK</span>
+                <p>Building the future with code and AI.</p>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html#about">About</a>
+                <a href="../projects.html">Projects</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Udeesha Kularathne. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
