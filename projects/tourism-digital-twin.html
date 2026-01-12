@@ -1,0 +1,308 @@
+<!-- projects/tourism-digital-twin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism Digital Twin & Demand Forecasting | Udeesha Kularathne</title>
+    <meta name="description" content="AI-powered tourism digital twin combining time-series forecasting, scenario simulation, and interactive geospatial visualization.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/projects.css">
+</head>
+
+<body>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<div class="noise"></div>
+
+<!-- Navigation -->
+<nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+        <a href="../index.html" class="nav-logo">
+            <span class="logo-text">Udeesha Kularathne</span>
+        </a>
+        <div class="nav-links">
+            <a href="../index.html#about" class="nav-link">About</a>
+            <a href="../index.html#experience" class="nav-link">Experience</a>
+            <a href="../projects.html" class="nav-link active">Projects</a>
+            <a href="../blog.html" class="nav-link">Blog</a>
+            <a href="../index.html#contact" class="nav-link">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Project Hero -->
+<section class="project-hero">
+    <div class="container">
+        <div class="project-hero-content">
+
+            <div class="project-breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../projects.html">Projects</a>
+                <span>/</span>
+                <span>Tourism Digital Twin</span>
+            </div>
+
+            <h1 class="project-hero-title">Tourism Digital Twin & Demand Forecasting System</h1>
+
+            <p class="project-hero-description">
+                A mobile-first AI system that combines hybrid time-series forecasting,
+                scenario simulation, and interactive geospatial visualization to model
+                tourism demand, safety, traffic, and crisis impact at both district and
+                national levels.
+            </p>
+
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">AI Engineer & Full-Stack Developer</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Timeline</span>
+                    <span class="meta-value">2024 – 2025</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Category</span>
+                    <span class="meta-value">AI/ML, Mobile App, Decision Support</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-bg">
+        <div class="gradient-sphere gradient-sphere-1"></div>
+        <div class="gradient-sphere gradient-sphere-2"></div>
+        <div class="grid-lines"></div>
+    </div>
+</section>
+
+<!-- Project Cover -->
+<div class="container">
+    <div class="blog-cover">
+        <div
+                class="project-cover-image"
+                style="background-image: url('../assets/images/projects/tourism-digital-twin.png');">
+        </div>
+    </div>
+</div>
+
+<!-- Overview -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Project Overview</h2>
+
+        <p>
+            This project was designed as a practical tourism decision-support system rather than
+            a standalone forecasting model. The goal was to create a “digital twin” that mirrors
+            how tourism demand evolves over time and reacts to external factors such as seasonality,
+            weather conditions, public sentiment, and crisis indicators.
+        </p>
+
+        <p>
+            The system integrates a hybrid machine learning forecasting pipeline with a mobile
+            application built using React Native (Expo). Users can explore live district-level
+            conditions through an interactive map and simulate future scenarios using a
+            configurable what-if engine.
+        </p>
+
+        <p>
+            The backend exposes structured APIs for forecasts, simulations, and historical summaries,
+            enabling clean separation between ML logic, data services, and frontend visualization.
+            The architecture is designed to scale from exploratory analytics to operational planning
+            tools without structural changes.
+        </p>
+
+        <p style="font-size: 0.9rem; color: var(--text-muted);">
+            Note: Dataset sources, exact feature thresholds, and operational tuning parameters
+            are abstracted to preserve commercial applicability and confidentiality.
+        </p>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Key Features</h2>
+
+        <div class="features-grid">
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 3v18h18"/>
+                        <path d="M7 15l3-3 3 2 5-6"/>
+                    </svg>
+                </div>
+                <h3>Hybrid Time-Series Forecasting</h3>
+                <p>
+                    Combines tree-based models and deep learning (LSTM) into a weighted ensemble
+                    optimized for time-series prediction accuracy and stability.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <h3>Automatic Feature Engineering & PCA</h3>
+                <p>
+                    Applies lag features, rolling averages, seasonal indicators, and automatic
+                    dimensionality reduction to stabilize multivariate inputs.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/>
+                    </svg>
+                </div>
+                <h3>Interactive Digital Twin Map</h3>
+                <p>
+                    Visualizes district-level demand, traffic, safety, and sentiment through
+                    animated geospatial overlays and live markers.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M7 7h10M7 12h10M7 17h10"/>
+                    </svg>
+                </div>
+                <h3>What-If Scenario Simulator</h3>
+                <p>
+                    Allows users to simulate changes in climate, crisis levels, and seasonality
+                    to observe projected impacts on tourism, safety, and congestion.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="tech-stack-section">
+    <div class="container">
+        <h2>Technology & Engineering Stack</h2>
+
+        <div class="tech-grid">
+            <span class="tech-item">Python</span>
+            <span class="tech-item">XGBoost</span>
+            <span class="tech-item">LSTM (Keras)</span>
+            <span class="tech-item">Hybrid Ensembles</span>
+            <span class="tech-item">Time-Series Modeling</span>
+
+            <span class="tech-item">PCA & Feature Engineering</span>
+            <span class="tech-item">Model Evaluation Pipelines</span>
+
+            <span class="tech-item">React Native (Expo)</span>
+            <span class="tech-item">TypeScript</span>
+            <span class="tech-item">Mobile UI Engineering</span>
+
+            <span class="tech-item">Node.js</span>
+            <span class="tech-item">REST APIs</span>
+            <span class="tech-item">Backend Services</span>
+
+            <span class="tech-item">Geospatial Visualization</span>
+            <span class="tech-item">Scenario Simulation</span>
+            <span class="tech-item">Decision Support Systems</span>
+        </div>
+    </div>
+</section>
+
+<!-- Results -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Results & Engineering Impact</h2>
+
+        <p>
+            The hybrid forecasting strategy significantly improves reliability over single-model
+            approaches. Tree-based models capture non-linear interactions between external drivers
+            such as seasonality and crisis indicators, while the LSTM component models temporal
+            dependencies across historical demand trends. The ensemble weighting is optimized
+            for percentage-based error, producing stable forecasts suitable for planning scenarios.
+        </p>
+
+        <p>
+            From an ML engineering perspective, the system demonstrates disciplined time-series
+            handling: strict temporal splits, lag-aware feature construction, and dimensionality
+            reduction applied only to relevant feature groups. This minimizes data leakage,
+            improves generalization, and keeps inference behavior aligned with training conditions.
+        </p>
+
+        <p>
+            On the backend, the project follows clean service-oriented principles. Forecasting,
+            simulation logic, and aggregation are exposed through predictable APIs, enabling the
+            frontend to remain fully decoupled from model internals. This separation allows models
+            to be retrained or replaced without breaking mobile clients or visualization logic.
+        </p>
+
+        <p>
+            The frontend architecture emphasizes usability and interpretability rather than raw
+            prediction display. Interactive maps, animated indicators, and scenario sliders are
+            designed to translate complex ML outputs into intuitive signals that non-technical
+            stakeholders can explore confidently.
+        </p>
+
+        <p>
+            Overall, the project demonstrates strong software engineering fundamentals alongside
+            applied machine learning: modular design, reproducible pipelines, scalable APIs,
+            and a product-oriented mindset. The result is a system that behaves like a real
+            decision-support product rather than a research prototype.
+        </p>
+    </div>
+</section>
+
+<!-- Navigation -->
+<section class="container">
+    <div class="project-nav">
+        <a href="engagement-attention-analytics.html" class="project-nav-link">
+            <span class="project-nav-label">Previous Project</span>
+            <span class="project-nav-title">Engagement & Attention Analytics</span>
+        </a>
+        <a href="hybrid-malware-detection.html" class="project-nav-link">
+            <span class="project-nav-label">Next Project</span>
+            <span class="project-nav-title">Hybrid Malware Detection System</span>
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">Udeesha Kularathne</span>
+                <p>Building the future with code and AI.</p>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#experience">Experience</a>
+                <a href="../projects.html">Projects</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Udeesha Kularathne. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

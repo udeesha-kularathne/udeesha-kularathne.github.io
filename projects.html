@@ -9,6 +9,50 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .page-header {
+            position: relative;
+            padding: 160px 0 80px;
+            overflow: hidden;
+        }
+        .page-header .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .page-header-content {
+            text-align: center;
+        }
+        .page-tag {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        .page-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .page-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .projects-page {
+            padding-top: 40px;
+        }
+        .nav-link.active {
+            color: var(--accent-primary);
+        }
+    </style>
 </head>
 <body>
     <div class="cursor"></div>
@@ -66,7 +110,7 @@
     <!-- Projects Section -->
     <section class="section projects-page">
         <div class="container">
-            <div class="projects-filter">
+            <div class="projects-filter" style="display: none">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="ai-ml">AI/ML</button>
                 <button class="filter-btn" data-filter="web">Web Apps</button>
@@ -247,7 +291,6 @@
                     </div>
                 </article>
 
-
                 <!-- Project 6 -->
                 <article class="project-card" data-category="ai-ml web">
                     <div class="project-image">
@@ -285,95 +328,223 @@
                 </article>
 
                 <!-- Project 7 -->
-<!--                <article class="project-card" data-category="web">-->
-<!--                    <div class="project-image">-->
-<!--                        <div class="project-placeholder">-->
-<!--                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">-->
-<!--                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>-->
-<!--                                <circle cx="12" cy="7" r="4"/>-->
-<!--                            </svg>-->
-<!--                        </div>-->
-<!--                        <div class="project-overlay">-->
-<!--                            <a href="projects/smart-lms-comprehension.html" class="project-link">View Project</a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="project-content">-->
-<!--                        <div class="project-tags">-->
-<!--                            <span class="tag tag-ai">AI/ML</span>-->
-<!--                            <span class="tag tag-web">Web App</span>-->
-<!--                            <span class="tag tag-">EdTech</span>-->
-<!--                        </div>-->
-<!--                        <h3 class="project-title">Smart LMS – Comprehension Analytics</h3>-->
-<!--                        <p class="project-description">-->
-<!--                            Adaptive learning management system with real-time comprehension detection,-->
-<!--                            ML-driven learner analytics, and instructor insight dashboards.-->
-<!--                        </p>-->
-<!--                        <div class="project-tech">-->
-<!--                            <span>React</span>-->
-<!--                            <span>Node.js</span>-->
-<!--                            <span>Python</span>-->
-<!--                            <span>scikit-learn</span>-->
-<!--                        </div>-->
-<!--                    </div>-->
+                <article class="project-card" data-category="ai-ml web">
+                    <div class="project-image">
+                        <div class="blog-cover">
+                            <div
+                                    class="blog-cover-image"
+                                    aria-label="Multilingual call center sentiment analysis illustration"
+                                    style="background-image: url('assets/images/projects/callsense.png');">
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="projects/call-center-sentiment.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
 
-<!--                </article>-->
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag tag-ai">AI/ML</span>
+                            <span class="tag tag-web">Real-Time System</span>
+                        </div>
 
-<!--                &lt;!&ndash; Project 8 &ndash;&gt;-->
-<!--                <article class="project-card" data-category="web">-->
-<!--                    <div class="project-image">-->
-<!--                        <div class="project-placeholder">-->
-<!--                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">-->
-<!--                                <rect x="1" y="3" width="15" height="13"/>-->
-<!--                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>-->
-<!--                                <circle cx="5.5" cy="18.5" r="2.5"/>-->
-<!--                                <circle cx="18.5" cy="18.5" r="2.5"/>-->
-<!--                            </svg>-->
-<!--                        </div>-->
-<!--                        <div class="project-overlay">-->
-<!--                            <a href="projects/delivery-system.html" class="project-link">View Project</a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="project-content">-->
-<!--                        <div class="project-tags">-->
-<!--                            <span class="tag tag-web">Web App</span>-->
-<!--                        </div>-->
-<!--                        <h3 class="project-title">Delivery Management System</h3>-->
-<!--                        <p class="project-description">Automated delivery workflow system with mobile app for warehouse personnel.</p>-->
-<!--                        <div class="project-tech">-->
-<!--                            <span>React</span>-->
-<!--                            <span>Kotlin</span>-->
-<!--                            <span>Node.js</span>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </article>-->
+                        <h3 class="project-title">Multilingual Call Center Sentiment Intelligence</h3>
 
-<!--                &lt;!&ndash; Project 9 &ndash;&gt;-->
-<!--                <article class="project-card" data-category="web">-->
-<!--                    <div class="project-image">-->
-<!--                        <div class="project-placeholder">-->
-<!--                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">-->
-<!--                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>-->
-<!--                                <line x1="3" y1="6" x2="21" y2="6"/>-->
-<!--                                <path d="M16 10a4 4 0 0 1-8 0"/>-->
-<!--                            </svg>-->
-<!--                        </div>-->
-<!--                        <div class="project-overlay">-->
-<!--                            <a href="projects/inventory-system.html" class="project-link">View Project</a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="project-content">-->
-<!--                        <div class="project-tags">-->
-<!--                            <span class="tag tag-web">Web App</span>-->
-<!--                        </div>-->
-<!--                        <h3 class="project-title">Inventory Management System</h3>-->
-<!--                        <p class="project-description">Streamlined stock distribution system across 54 sub-companies and customers.</p>-->
-<!--                        <div class="project-tech">-->
-<!--                            <span>React</span>-->
-<!--                            <span>Node.js</span>-->
-<!--                            <span>SQL</span>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </article>-->
+                        <p class="project-description">
+                            Real-time multilingual speech-to-text, sentiment classification, and AI-driven
+                            customer service advice generation for call center environments.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>Whisper</span>
+                            <span>Transformers</span>
+                            <span>Ensemble ML</span>
+                            <span>Flask</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 8 -->
+                <article class="project-card" data-category="ai">
+                    <div class="project-image">
+                        <div class="blog-cover">
+                            <div
+                                    class="blog-cover-image"
+                                    aria-label="Multilingual call center sentiment analysis illustration"
+                                    style="background-image: url('assets/images/projects/malware.png');">
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="projects/hybrid-malware-detection.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag tag-ai">AI / ML</span>
+                        </div>
+
+                        <h3 class="project-title">Hybrid Malware Detection System</h3>
+
+                        <p class="project-description">
+                            AI-powered malware detection system combining static feature analysis
+                            and dynamic API call sequence modeling using a hybrid ensemble approach.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>LSTM</span>
+                            <span>Ensemble ML</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 9 -->
+                <article class="project-card" data-category="ai">
+                    <div class="project-image">
+                        <div class="blog-cover">
+                            <div
+                                    class="blog-cover-image"
+                                    aria-label="Real-Time Engagement & Attention Analytics"
+                                    style="background-image: url('assets/images/projects/engagement.png');">
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="projects/engagement-attention-analytics.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag tag-ai">AI / CV</span>
+                        </div>
+
+                        <h3 class="project-title">Real-Time Engagement & Attention Analytics</h3>
+
+                        <p class="project-description">
+                            Multi-signal engagement scoring using emotion recognition, eye gaze, and head pose,
+                            with a backend pipeline for time-series logging and analytics dashboards.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>TensorFlow</span>
+                            <span>MediaPipe</span>
+                            <span>Node.js</span>
+                            <span>Supabase</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 10 -->
+                <article class="project-card" data-category="ai">
+                    <div class="project-image">
+                        <div class="blog-cover">
+                            <div
+                                    class="blog-cover-image"
+                                    aria-label="Tourism Digital Twin & Forecasting"
+                                    style="background-image: url('assets/images/projects/tourism-digital-twin.png');">
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="projects/tourism-digital-twin.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag tag-ai">AI / Forecasting</span>
+                        </div>
+
+                        <h3 class="project-title">Tourism Digital Twin & Forecasting</h3>
+
+                        <p class="project-description">
+                            Mobile-first tourism digital twin combining hybrid time-series forecasting,
+                            geospatial visualization, and what-if scenario simulation.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>React Native</span>
+                            <span>XGBoost</span>
+                            <span>LSTM</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 11 -->
+                <article class="project-card" data-category="ai">
+                    <div class="project-image">
+                        <div class="blog-cover">
+                            <div
+                                    class="blog-cover-image"
+                                    aria-label="Sentiment & Crisis Intelligence"
+                                    style="background-image: url('assets/images/projects/sentiment-crisis.png');">
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="projects/sentiment-crisis-intelligence.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag tag-ai">NLP / Intelligence</span>
+                        </div>
+
+                        <h3 class="project-title">Sentiment & Crisis Intelligence</h3>
+
+                        <p class="project-description">
+                            Hybrid NLP system aggregating review sentiment and crisis indicators
+                            into district-level intelligence for digital twin analytics.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>BERT</span>
+                            <span>Ensemble ML</span>
+                            <span>NLP</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 12 -->
+                <article class="project-card" data-category="ai">
+                    <div class="project-image">
+                        <div class="blog-cover">
+                            <div
+                                    class="blog-cover-image"
+                                    aria-label="Intelligent Itinerary Generator"
+                                    style="background-image: url('assets/images/projects/intelligent-itinerary.png');">
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="projects/intelligent-itinerary-generator.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag tag-ai">AI / Optimization</span>
+                        </div>
+
+                        <h3 class="project-title">Intelligent Itinerary Generator</h3>
+
+                        <p class="project-description">
+                            AI-driven itinerary generation system that converts forecasts,
+                            sentiment intelligence, and user preferences into optimized travel plans.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>XGBoost</span>
+                            <span>Optimization</span>
+                            <span>React Native</span>
+                            <span>Geospatial</span>
+                        </div>
+                    </div>
+                </article>
+
+
             </div>
         </div>
     </section>
@@ -416,49 +587,6 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
-    <style>
-        .page-header {
-            position: relative;
-            padding: 160px 0 80px;
-            overflow: hidden;
-        }
-        .page-header .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        .page-header-content {
-            text-align: center;
-        }
-        .page-tag {
-            display: inline-block;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--accent-primary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-        }
-        .page-title {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        .page-description {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .projects-page {
-            padding-top: 40px;
-        }
-        .nav-link.active {
-            color: var(--accent-primary);
-        }
-    </style>
+
 </body>
 </html>

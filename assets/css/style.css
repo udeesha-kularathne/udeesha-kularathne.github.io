@@ -907,8 +907,47 @@ body:hover .cursor-follower {
 }
 
 @media (max-width: 600px) {
+
+    .container {
+        max-width: 98vw;
+        margin: 0 0;
+        padding: 0 20px;
+    }
+
+
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+
+    .about-float-card {
+        right: 0;
+        bottom: -70px;
+        display: none;
+    }
+
+    .about-image-wrapper {
+        position: relative;
+    }
+
+    .about-image {
+
+
+    }
+
+    .image-placeholder {
+        width: 300px;
+        height: 400px;
+
+
+
+    }
+
+    .profile-cover-image {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+
+
     }
 }
 

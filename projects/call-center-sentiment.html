@@ -1,0 +1,375 @@
+<!--projects/call-center-sentiment.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilingual Call Center Sentiment Intelligence | Udeesha Kularathne</title>
+    <meta name="description" content="A real-time multilingual call center intelligence system combining speech-to-text, sentiment analysis, and AI-driven advisory support.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/projects.css">
+</head>
+<body>
+
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<div class="noise"></div>
+
+<!-- Navigation -->
+<nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+        <a href="../index.html" class="nav-logo">
+            <span class="logo-text">Udeesha Kularathne</span>
+        </a>
+        <div class="nav-links">
+            <a href="../index.html#about" class="nav-link" data-text="About">About</a>
+            <a href="../index.html#experience" class="nav-link" data-text="Experience">Experience</a>
+            <a href="../projects.html" class="nav-link active" data-text="Projects">Projects</a>
+            <a href="../blog.html" class="nav-link" data-text="Blog">Blog</a>
+            <a href="../index.html#contact" class="nav-link" data-text="Contact">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Navigation -->
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-content">
+        <a href="../index.html#about" class="mobile-nav-link">About</a>
+        <a href="../index.html#experience" class="mobile-nav-link">Experience</a>
+        <a href="../projects.html" class="mobile-nav-link">Projects</a>
+        <a href="../blog.html" class="mobile-nav-link">Blog</a>
+        <a href="../index.html#contact" class="mobile-nav-link">Contact</a>
+    </div>
+</div>
+
+<!-- Project Hero -->
+<section class="project-hero">
+    <div class="container">
+        <div class="project-hero-content">
+            <div class="project-breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../projects.html">Projects</a>
+                <span>/</span>
+                <span>Call Center Sentiment</span>
+            </div>
+
+            <h1 class="project-hero-title">
+                Multilingual Call Center Sentiment Intelligence & Advisory System
+            </h1>
+
+            <p class="project-hero-description">
+                A real-time AI system that transcribes multilingual customer calls, detects emotional sentiment,
+                and generates context-aware advisory guidance to support call center agents during live interactions.
+            </p>
+
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">ML Engineer & System Architect</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Timeline</span>
+                    <span class="meta-value">2024 – 2025</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Category</span>
+                    <span class="meta-value">AI/ML, Speech Intelligence</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-bg">
+        <div class="gradient-sphere gradient-sphere-1"></div>
+        <div class="gradient-sphere gradient-sphere-2"></div>
+        <div class="grid-lines"></div>
+    </div>
+</section>
+
+<!-- Project Image -->
+<div class="container">
+    <div class="blog-cover">
+        <div
+                class="project-cover-image"
+                aria-label="Multilingual call center sentiment analysis illustration"
+                style="background-image: url('../assets/images/projects/callsense.png');">
+        </div>
+    </div>
+</div>
+
+<!-- Overview -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Project Overview</h2>
+
+        <p>
+            This project was designed to address the limitations of traditional call center analytics, where
+            emotional insight is typically extracted after calls have ended. The system introduces a real-time
+            intelligence pipeline capable of understanding customer sentiment while conversations are still active.
+        </p>
+
+        <p>
+            Incoming voice segments are automatically transcribed using multilingual speech-to-text models that
+            support Sinhala, English, and Tamil. The transcribed text is then routed through language-aware
+            sentiment analysis pipelines, producing emotionally contextualized interpretations rather than
+            simple polarity labels.
+        </p>
+
+        <p>
+            Sentiment outputs are combined with the original message content and passed into an AI-driven
+            advisory model. This component generates professional, situational guidance aimed at helping
+            call center agents respond effectively—whether the goal is de-escalation, reassurance, or
+            reinforcement of positive interactions.
+        </p>
+
+        <p style="font-size: 0.9rem; color: var(--text-muted);">
+            Note: Training data sources, internal thresholds, and response policies are intentionally abstracted
+            to respect privacy, operational security, and commercial constraints.
+        </p>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Key Features</h2>
+
+        <div class="features-grid">
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <!-- Speech / audio -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                        <path d="M12 19v3"/>
+                        <path d="M8 22h8"/>
+                    </svg>
+                </div>
+                <h3>Multilingual Speech Transcription</h3>
+                <p>
+                    Converts live audio into text using Whisper-based models capable of handling Sinhala,
+                    English, and Tamil without manual language selection.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <!-- Language / globe -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M2 12h20"/>
+                        <path d="M12 2c3 3 3 17 0 20"/>
+                        <path d="M12 2c-3 3-3 17 0 20"/>
+                    </svg>
+                </div>
+                <h3>Language-Aware Sentiment Analysis</h3>
+                <p>
+                    Routes transcribed text through language-specific sentiment pipelines to ensure accurate
+                    emotional interpretation across linguistic and cultural contexts.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <!-- Ensemble / stacked layers -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 12l10 5 10-5"/>
+                        <path d="M2 17l10 5 10-5"/>
+                    </svg>
+                </div>
+                <h3>Ensemble-Based Sentiment Classification</h3>
+                <p>
+                    Combines linear models, tree-based learners, and neural networks into a calibrated ensemble
+                    optimized for robustness in noisy, real-world conversational data.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <!-- Advice / message -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+                        <path d="M7 8h10"/>
+                        <path d="M7 12h7"/>
+                    </svg>
+                </div>
+                <h3>Contextual Advice Generation</h3>
+                <p>
+                    Uses a transformer-based text generation model to produce professional, emotion-aware
+                    advisory guidance tailored to the customer’s sentiment and message intent.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <!-- Low latency / speed -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 13a8 8 0 1 1-16 0 8 8 0 0 1 16 0z"/>
+                        <path d="M12 9v4l3 2"/>
+                        <path d="M18 6l2-2"/>
+                    </svg>
+                </div>
+                <h3>Low-Latency Real-Time Design</h3>
+                <p>
+                    Designed to operate within tight latency budgets, ensuring insights and advice are delivered
+                    during active conversations without disrupting natural dialogue flow.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <!-- Modular / blocks -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7" rx="1"/>
+                        <rect x="14" y="3" width="7" height="7" rx="1"/>
+                        <rect x="3" y="14" width="7" height="7" rx="1"/>
+                        <rect x="14" y="14" width="7" height="7" rx="1"/>
+                    </svg>
+                </div>
+                <h3>Modular & Extensible Architecture</h3>
+                <p>
+                    Separates transcription, sentiment inference, and advice generation into independent services,
+                    enabling safe iteration and future model upgrades.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Tech Stack -->
+<section class="tech-stack-section">
+    <div class="container">
+        <h2>Technology & Engineering Stack</h2>
+
+        <div class="tech-grid">
+            <span class="tech-item">Python</span>
+            <span class="tech-item">Flask</span>
+            <span class="tech-item">REST APIs</span>
+
+            <span class="tech-item">Whisper (Speech-to-Text)</span>
+            <span class="tech-item">Transformers</span>
+            <span class="tech-item">Sentence Embeddings</span>
+
+            <span class="tech-item">SVM</span>
+            <span class="tech-item">Logistic Regression</span>
+            <span class="tech-item">LightGBM</span>
+            <span class="tech-item">Neural Networks</span>
+            <span class="tech-item">Ensemble Learning</span>
+
+            <span class="tech-item">Advice Generation Models</span>
+            <span class="tech-item">Feature Engineering Pipelines</span>
+            <span class="tech-item">Model Calibration</span>
+        </div>
+    </div>
+</section>
+
+<!-- Results -->
+
+<section class="project-content-section">
+    <div class="container">
+        <h2>Results & Engineering Impact</h2>
+
+        <p>
+            The key outcome of this project is the successful deployment of a real-time, multilingual
+            intelligence pipeline capable of operating within live call center environments.
+            By combining speech recognition, sentiment inference, and advice generation into a
+            unified workflow, the system shifts customer analytics from retrospective reporting
+            to in-call decision support.
+        </p>
+
+        <p>
+            From a machine learning standpoint, the project demonstrates how ensemble-based sentiment
+            modeling improves robustness when dealing with noisy conversational text produced by
+            speech-to-text systems. The use of multiple model families allows the system to remain
+            stable across language variations, transcription artifacts, and emotionally charged
+            speech, where single-model approaches often degrade.
+        </p>
+
+        <p>
+            The integration of sentiment outputs with an advice generation model extends the system
+            beyond passive emotion detection. Instead of simply labeling a customer as angry or
+            dissatisfied, the platform translates emotional and semantic context into actionable,
+            professional guidance that supports de-escalation, reassurance, or positive reinforcement
+            during the conversation itself.
+        </p>
+
+        <p>
+            From an engineering perspective, the system emphasizes strict separation of concerns
+            across the processing pipeline. Speech transcription, sentiment inference, and advice
+            generation are implemented as isolated services connected through well-defined APIs.
+            This design allows each component to be independently optimized, replaced, or scaled
+            without cascading changes across the platform.
+        </p>
+
+        <p>
+            The real-time constraints of call center interactions influenced several architectural
+            decisions, including lightweight preprocessing, batched inference strategies, and
+            careful model selection to balance accuracy with latency. These considerations ensure
+            that insights are delivered quickly enough to remain useful to agents without introducing
+            disruptive delays in conversation flow.
+        </p>
+
+        <p>
+            Overall, the project demonstrates a production-oriented approach to applied AI, where
+            machine learning models are treated as evolving system components rather than isolated
+            experiments. The result is a scalable foundation that can be extended to additional
+            languages, sentiment dimensions, policy-aware response generation, or deeper analytics
+            without requiring a full architectural redesign.
+        </p>
+    </div>
+</section>
+
+
+<!-- Navigation -->
+<section class="container">
+    <div class="project-nav">
+        <a href="aflatoxin-detection.html" class="project-nav-link">
+            <span class="project-nav-label">Previous Project</span>
+            <span class="project-nav-title">Aflatoxin Detection & Yield Prediction</span>
+        </a>
+        <a href="smart-lms-comprehension.html" class="project-nav-link">
+            <span class="project-nav-label">Next Project</span>
+            <span class="project-nav-title">Smart LMS – Comprehension Analytics</span>
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">Udeesha Kularathne</span>
+                <p>Building the future with code and AI.</p>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#experience">Experience</a>
+                <a href="../projects.html">Projects</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/udeeshakularathne" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Udeesha Kularathne. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

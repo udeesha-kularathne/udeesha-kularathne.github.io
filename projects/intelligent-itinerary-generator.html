@@ -1,0 +1,306 @@
+<!-- projects/intelligent-itinerary-generator.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Itinerary Generator | Udeesha Kularathne</title>
+    <meta name="description" content="AI-powered itinerary generation system that transforms forecasts, sentiment intelligence, and user preferences into optimized, adaptive travel plans.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/projects.css">
+</head>
+
+<body>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<div class="noise"></div>
+
+<!-- Navigation -->
+<nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+        <a href="../index.html" class="nav-logo">
+            <span class="logo-text">Udeesha Kularathne</span>
+        </a>
+        <div class="nav-links">
+            <a href="../index.html#about" class="nav-link">About</a>
+            <a href="../index.html#experience" class="nav-link">Experience</a>
+            <a href="../projects.html" class="nav-link active">Projects</a>
+            <a href="../blog.html" class="nav-link">Blog</a>
+            <a href="../index.html#contact" class="nav-link">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Project Hero -->
+<section class="project-hero">
+    <div class="container">
+        <div class="project-hero-content">
+
+            <div class="project-breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../projects.html">Projects</a>
+                <span>/</span>
+                <span>Intelligent Itinerary Generator</span>
+            </div>
+
+            <h1 class="project-hero-title">Intelligent Itinerary Generator</h1>
+
+            <p class="project-hero-description">
+                A production-oriented AI system that converts tourism forecasts,
+                sentiment intelligence, risk signals, and user preferences into
+                optimized, adaptive, day-by-day travel itineraries delivered through
+                a mobile-first experience.
+            </p>
+
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">AI Engineer & Mobile Systems Engineer</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Timeline</span>
+                    <span class="meta-value">2024 – 2025</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Category</span>
+                    <span class="meta-value">AI/ML, Optimization, Mobile App</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-bg">
+        <div class="gradient-sphere gradient-sphere-1"></div>
+        <div class="gradient-sphere gradient-sphere-2"></div>
+        <div class="grid-lines"></div>
+    </div>
+</section>
+
+<!-- Project Cover -->
+<div class="container">
+    <div class="blog-cover">
+        <div
+                class="project-cover-image"
+                style="background-image: url('../assets/images/projects/intelligent-itinerary.png');">
+        </div>
+    </div>
+</div>
+
+<!-- Overview -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Project Overview</h2>
+
+        <p>
+            This project represents the final decision layer of a larger smart tourism
+            platform. While upstream components focus on forecasting demand and
+            extracting sentiment and risk intelligence, this system is responsible
+            for converting those signals into concrete, personalized travel plans.
+        </p>
+
+        <p>
+            The itinerary generator combines hybrid machine learning, constrained
+            optimization, geospatial reasoning, and behavioral adaptation to produce
+            realistic, human-friendly itineraries rather than simple ranked lists.
+            The system is designed to operate under real-world constraints such as
+            time, distance, cost, category diversity, and regional cohesion.
+        </p>
+
+        <p>
+            Outputs are delivered through a React Native (Expo) mobile interface
+            featuring interactive maps, route visualization, and daily summaries,
+            ensuring that complex backend intelligence is translated into an intuitive
+            user experience.
+        </p>
+
+        <p style="font-size: 0.9rem; color: var(--text-muted);">
+            Note: Exact weighting strategies, thresholds, and operational heuristics
+            are abstracted to preserve commercial viability and deployment flexibility.
+        </p>
+    </div>
+</section>
+
+<!-- Key Features -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Key Features</h2>
+
+        <div class="features-grid">
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 3v18h18"/>
+                        <path d="M7 15l3-3 3 2 5-6"/>
+                    </svg>
+                </div>
+                <h3>Hybrid Preference Modeling</h3>
+                <p>
+                    Uses an ensemble of gradient-boosted trees and a fusion neural
+                    network to estimate user–attraction compatibility scores.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <h3>Context-Aware Decision Logic</h3>
+                <p>
+                    Integrates forecasts, sentiment intelligence, safety signals,
+                    and weather conditions to adjust recommendations dynamically.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M7 7h10M7 12h10M7 17h10"/>
+                    </svg>
+                </div>
+                <h3>Diversity & Region-Aware Clustering</h3>
+                <p>
+                    Organizes attractions into daily plans that balance category
+                    diversity, geographic proximity, and feasible travel time.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/>
+                    </svg>
+                </div>
+                <h3>Behavioral Adaptation Loop</h3>
+                <p>
+                    Tracks deviations between planned and actual behavior to
+                    discover new user interests and refine future itineraries.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="tech-stack-section">
+    <div class="container">
+        <h2>Technology & Engineering Stack</h2>
+
+        <div class="tech-grid">
+            <span class="tech-item">Python</span>
+            <span class="tech-item">XGBoost</span>
+            <span class="tech-item">Fusion Neural Networks</span>
+            <span class="tech-item">Negative Sampling</span>
+
+            <span class="tech-item">Constraint Optimization</span>
+            <span class="tech-item">Geospatial Reasoning</span>
+            <span class="tech-item">Route Optimization</span>
+
+            <span class="tech-item">React Native (Expo)</span>
+            <span class="tech-item">TypeScript</span>
+            <span class="tech-item">Mobile UI Engineering</span>
+
+            <span class="tech-item">Node.js</span>
+            <span class="tech-item">Service-Oriented APIs</span>
+            <span class="tech-item">System Integration</span>
+        </div>
+    </div>
+</section>
+
+<!-- Results -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Results & Engineering Impact</h2>
+
+        <p>
+            The hybrid preference modeling approach produces significantly more
+            coherent itineraries than rule-based or ranking-only systems. By
+            learning from both positive and negative user–attraction interactions,
+            the model can distinguish between acceptable and genuinely preferred
+            experiences rather than simply selecting popular locations.
+        </p>
+
+        <p>
+            From an ML systems perspective, this project demonstrates how predictive
+            models can be safely embedded into constraint-heavy environments. Model
+            outputs are treated as soft signals that are refined through optimization
+            logic, ensuring feasibility with respect to time, distance, cost, and
+            diversity requirements.
+        </p>
+
+        <p>
+            On the software engineering side, the system emphasizes modular design
+            and clear boundaries between intelligence layers. Forecasting, sentiment,
+            risk analysis, itinerary generation, routing, and behavioral learning
+            operate as independent components connected through well-defined
+            interfaces, enabling maintainability and extensibility.
+        </p>
+
+        <p>
+            The mobile frontend focuses on interpretability and usability rather than
+            raw prediction exposure. Map-based visualization, route polylines, and
+            daily summaries help users understand and trust the recommendations,
+            which is essential for real-world adoption.
+        </p>
+
+        <p>
+            Overall, this project demonstrates end-to-end AI product engineering:
+            transforming data into intelligence, intelligence into decisions, and
+            decisions into a polished user experience. It reflects the design
+            patterns used in modern decision-support and personalization systems.
+        </p>
+    </div>
+</section>
+
+<!-- Navigation -->
+<section class="container">
+    <div class="project-nav">
+        <a href="sentiment-crisis-intelligence.html" class="project-nav-link">
+            <span class="project-nav-label">Previous Project</span>
+            <span class="project-nav-title">Sentiment & Crisis Intelligence</span>
+        </a>
+        <a href="hybrid-malware-detection.html" class="project-nav-link">
+            <span class="project-nav-label">Next Project</span>
+            <span class="project-nav-title">Hybrid Malware Detection System</span>
+        </a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">Udeesha Kularathne</span>
+                <p>Building the future with code and AI.</p>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#experience">Experience</a>
+                <a href="../projects.html">Projects</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Udeesha Kularathne. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,18 +1,20 @@
-<!--projects/aflatoxin-detection.html-->
+<!-- projects/engagement-attention-analytics.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aflatoxin Detection & Yield Prediction System | Udeesha Kularathne</title>
-    <meta name="description" content="A full-stack AI system for aflatoxin risk detection and crop yield prediction with explainable ML, geo analytics, and decision-support dashboards.">
+    <title>Real-Time Engagement & Attention Analytics | Udeesha Kularathne</title>
+    <meta name="description" content="A real-time computer vision system that fuses emotion recognition, head pose, and eye gaze into an engagement score with a dashboard-ready backend.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/projects.css">
-
 </head>
+
 <body>
 <div class="cursor"></div>
 <div class="cursor-follower"></div>
@@ -57,30 +59,34 @@
                 <span>/</span>
                 <a href="../projects.html">Projects</a>
                 <span>/</span>
-                <span>Aflatoxin & Yield</span>
+                <span>Engagement Analytics</span>
             </div>
-            <h1 class="project-hero-title">Aflatoxin Detection & Yield Prediction System</h1>
+
+            <h1 class="project-hero-title">Real-Time Engagement & Attention Analytics</h1>
+
             <p class="project-hero-description">
-                A full-stack ML decision-support system for agriculture that predicts aflatoxin risk and crop yield,
-                provides geo-aware insights, and delivers transparent explanations through feature importance and
-                interpretable model outputs.
+                A real-time computer vision system that fuses emotion recognition, head pose, and eye gaze
+                into an interpretable engagement score. Designed for analytics dashboards and time-series reporting,
+                with a backend pipeline built for structured storage, aggregation, and future product extension.
             </p>
+
             <div class="project-meta">
                 <div class="meta-item">
                     <span class="meta-label">Role</span>
-                    <span class="meta-value">Full-Stack Developer & ML Engineer</span>
+                    <span class="meta-value">Full-Stack Developer & AI Engineer</span>
                 </div>
                 <div class="meta-item">
                     <span class="meta-label">Timeline</span>
-                    <span class="meta-value">2023 - 2024</span>
+                    <span class="meta-value">2024 - 2025</span>
                 </div>
                 <div class="meta-item">
                     <span class="meta-label">Category</span>
-                    <span class="meta-value">AI/ML, Web Application</span>
+                    <span class="meta-value">AI/ML, Computer Vision, Web Application</span>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="hero-bg">
         <div class="gradient-sphere gradient-sphere-1"></div>
         <div class="gradient-sphere gradient-sphere-2"></div>
@@ -93,11 +99,10 @@
     <div class="blog-cover">
         <div
                 class="project-cover-image"
-                aria-label="Random Forest illustration"
-                style="background-image: url('../assets/images/projects/aflatoxin.png');">
+                aria-label="Engagement analytics cover illustration"
+                style="background-image: url('../assets/images/projects/engagement.png');">
         </div>
     </div>
-
 </div>
 
 <!-- Overview -->
@@ -106,29 +111,28 @@
         <h2>Project Overview</h2>
 
         <p>
-            This project was built to convert complex agriculture datasets into practical, decision-ready outputs.
-            The system combines predictive modeling with a dashboard-driven interface so that users can assess
-            contamination risk, estimate yield outcomes, and understand the key environmental or management factors
-            influencing those predictions.
+            This project was built to convert raw webcam/video signals into measurable, dashboard-ready engagement insights.
+            Instead of relying on a single model or a single signal, the system combines multiple perception layers:
+            emotion recognition, attention cues (eye gaze), and posture/orientation cues (head pose). The outcome is an
+            interpretable engagement score that can be monitored live and analyzed historically.
         </p>
 
         <p>
-            The solution follows an end-to-end workflow: raw datasets are cleaned and standardized, location-related
-            fields are normalized into consistent geographic groups, and a feature engineering layer prepares inputs
-            for both regression and classification tasks. The ML layer supports multiple model families and evaluation
-            workflows, while explainability tooling (feature importance + local/global interpretations) ensures outputs
-            remain transparent and defensible.
+            The ML pipeline follows a hybrid approach: a “basic emotion” model handles common facial emotion categories,
+            while a “complex emotion” model focuses on engagement-related states (such as boredom, confusion, and frustration).
+            These predictions are fused with gaze and head-pose signals to compute a final engagement score and a readable
+            engagement status (engaged / partially engaged / not engaged).
         </p>
 
         <p>
-            The frontend is designed as a data-heavy analytics interface (EDA, prediction forms, geo summaries,
-            safe-range guidance, and feature importance exploration). The backend exposes structured APIs for data and
-            ML services, keeping the UI decoupled from model internals and supporting long-term maintainability.
+            On the engineering side, the system is designed as a product-ready workflow. Live inference produces structured
+            JSON outputs, a backend API stores time-series logs and exposes reporting endpoints, and the frontend can consume
+            both real-time and aggregated summaries for charts, dashboards, and operational reporting.
         </p>
 
         <p style="font-size: 0.9rem; color: var(--text-muted);">
-            Note: Specific datasets, thresholds, and proprietary optimization details are intentionally abstracted
-            to respect commercial and confidentiality constraints.
+            Note: To protect commercial usability and privacy, identity-specific tracking, deployment thresholds,
+            dataset sourcing details, and operational monitoring rules are intentionally abstracted.
         </p>
     </div>
 </section>
@@ -137,6 +141,7 @@
 <section class="project-content-section">
     <div class="container">
         <h2>Key Features</h2>
+
         <div class="features-grid">
 
             <div class="feature-card">
@@ -145,10 +150,10 @@
                         <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/>
                     </svg>
                 </div>
-                <h3>Aflatoxin Risk Classification</h3>
+                <h3>Dual-Model Emotion Recognition</h3>
                 <p>
-                    Predicts contamination risk as a classification task using structured preprocessing pipelines and
-                    ensemble modeling, returning both decisions and confidence-oriented outputs.
+                    Uses two specialized emotion models: one for standard facial emotions and another for engagement-oriented
+                    states. This separation improves signal clarity and reduces confusion between “mood” and “engagement”.
                 </p>
             </div>
 
@@ -159,10 +164,10 @@
                         <path d="M7 15l3-3 3 2 5-6"/>
                     </svg>
                 </div>
-                <h3>Yield Prediction (Regression)</h3>
+                <h3>Attention Signals via Eye-Gaze</h3>
                 <p>
-                    Estimates expected yield using regression models optimized for tabular data,
-                    enabling scenario comparisons across different environmental and management conditions.
+                    Estimates horizontal gaze direction using facial landmarks (and iris landmarks when available),
+                    producing a calibrated gaze signal that supports distraction detection and attention scoring.
                 </p>
             </div>
 
@@ -173,10 +178,10 @@
                         <path d="M12 6v6l4 2"/>
                     </svg>
                 </div>
-                <h3>Time & Location Normalization</h3>
+                <h3>Head Pose Estimation</h3>
                 <p>
-                    Includes robust preprocessing to standardize inconsistent field inputs (such as location naming),
-                    enabling reliable aggregation, geo summaries, and stable model inputs.
+                    Computes pitch, yaw, and roll from facial landmarks using a geometric pose solver, adding a strong
+                    posture-based cue to distinguish “looking away” from genuine emotional states.
                 </p>
             </div>
 
@@ -187,10 +192,10 @@
                         <path d="M4 15l4-4 4 3 6-7"/>
                     </svg>
                 </div>
-                <h3>Explainable AI & Feature Importance</h3>
+                <h3>Engagement Score Fusion</h3>
                 <p>
-                    Provides multi-method explainability (linear coefficients, tree importances, permutation tests,
-                    SHAP, and local explanations) to justify predictions and improve trust.
+                    Produces a final engagement score by combining emotion negativity signals with distraction components.
+                    Outputs are designed to be interpretable and stable for dashboards, not just model-centric probabilities.
                 </p>
             </div>
 
@@ -200,10 +205,10 @@
                         <path d="M12 2l3 6 7 .5-5 4.2 1.6 6.8L12 16l-6.6 3.5L7 12.7 2 8.5 9 8l3-6z"/>
                     </svg>
                 </div>
-                <h3>Safe-Range Guidance</h3>
+                <h3>Explainability with Grad-CAM</h3>
                 <p>
-                    Computes practical “safe/adjustable” ranges for key inputs to support decision-making,
-                    enabling users to explore changes that may reduce risk or improve outcomes.
+                    Supports heatmap-based visual explanations to verify what the model focuses on during prediction,
+                    helping validate behavior, reduce debugging time, and improve trust in the pipeline.
                 </p>
             </div>
 
@@ -214,10 +219,10 @@
                         <path d="M7 7h10M7 12h10M7 17h10"/>
                     </svg>
                 </div>
-                <h3>Analytics Dashboard & EDA</h3>
+                <h3>Time-Series Logging & Reporting API</h3>
                 <p>
-                    A React-based analytics interface for exploratory data analysis, prediction workflows, geo averages,
-                    and interpretability outputs—structured for clarity and fast navigation.
+                    Stores structured ML outputs as time-series logs and exposes endpoints for engagement history,
+                    daily aggregation, and report-ready summaries designed for analytics dashboards.
                 </p>
             </div>
 
@@ -229,72 +234,30 @@
 <section class="tech-stack-section">
     <div class="container">
         <h2>Technology & Engineering Stack</h2>
+
         <div class="tech-grid">
-            <span class="tech-item">React</span>
-            <span class="tech-item">JavaScript</span>
+            <span class="tech-item">Python</span>
+            <span class="tech-item">TensorFlow / Keras</span>
+            <span class="tech-item">Computer Vision</span>
+            <span class="tech-item">Emotion Recognition</span>
+            <span class="tech-item">Grad-CAM Explainability</span>
+
+            <span class="tech-item">MediaPipe Face Mesh</span>
+            <span class="tech-item">Eye-Gaze Estimation</span>
+            <span class="tech-item">Head Pose (PnP Solver)</span>
+            <span class="tech-item">Real-Time Inference</span>
+
             <span class="tech-item">Node.js</span>
             <span class="tech-item">Express.js</span>
             <span class="tech-item">REST APIs</span>
 
             <span class="tech-item">Supabase</span>
             <span class="tech-item">PostgreSQL</span>
-
-            <span class="tech-item">Python</span>
-            <span class="tech-item">scikit-learn</span>
-            <span class="tech-item">XGBoost</span>
-            <span class="tech-item">LightGBM</span>
-            <span class="tech-item">Random Forest</span>
-            <span class="tech-item">Stacking Ensembles</span>
-
-            <span class="tech-item">Pandas</span>
-            <span class="tech-item">NumPy</span>
-            <span class="tech-item">Matplotlib</span>
-
-            <span class="tech-item">SHAP</span>
-            <span class="tech-item">LIME</span>
-            <span class="tech-item">Permutation Importance</span>
+            <span class="tech-item">JSONB Time-Series Storage</span>
 
             <span class="tech-item">Modular Backend Design</span>
-            <span class="tech-item">Preprocessing Pipelines</span>
-            <span class="tech-item">Model Evaluation Workflows</span>
-        </div>
-    </div>
-</section>
-
-<!-- Gallery -->
-<section class="project-content-section">
-    <div class="container">
-        <h2>Project Gallery</h2>
-        <p>Screenshots and visualizations from the system (dashboard, geo summaries, and explainability views).</p>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                    <circle cx="8.5" cy="8.5" r="1.5"/>
-                    <path d="M21 15l-5-5L5 21"/>
-                </svg>
-            </div>
-            <div class="gallery-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                    <circle cx="8.5" cy="8.5" r="1.5"/>
-                    <path d="M21 15l-5-5L5 21"/>
-                </svg>
-            </div>
-            <div class="gallery-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                    <circle cx="8.5" cy="8.5" r="1.5"/>
-                    <path d="M21 15l-5-5L5 21"/>
-                </svg>
-            </div>
-            <div class="gallery-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                    <circle cx="8.5" cy="8.5" r="1.5"/>
-                    <path d="M21 15l-5-5L5 21"/>
-                </svg>
-            </div>
+            <span class="tech-item">Separation of Concerns</span>
+            <span class="tech-item">Maintainable API Architecture</span>
         </div>
     </div>
 </section>
@@ -305,25 +268,46 @@
         <h2>Results & Engineering Impact</h2>
 
         <p>
-            The main value of this system is the end-to-end integration of predictive modeling with a usable,
-            decision-support interface. The workflow is not limited to “training a model”—it includes robust
-            preprocessing, repeatable evaluation, explainability outputs, and a UI that makes analysis accessible
-            to non-technical users while still remaining detailed enough for technical review.
+            The key outcome of this project is a practical, real-time engagement measurement workflow that behaves like a product,
+            not just a model demo. The system produces stable, interpretable engagement outputs by combining multiple weak signals
+            into a single score: emotion probabilities, attention direction (eye gaze), and posture/orientation (head pose). This
+            multi-signal fusion improves robustness compared to relying on a single emotion classifier that can be brittle under
+            lighting changes, head movement, or noisy facial expressions.
         </p>
 
         <p>
-            The ML layer demonstrates a practical blend of model families for tabular prediction problems,
-            including ensemble learning strategies and pipeline-based preprocessing. This design reduces risk of
-            inconsistent transformations, supports reproducibility, and keeps inference aligned with training-time
-            logic. Explainability tooling adds transparency by validating which factors drive risk and yield outputs,
-            supporting trust and accountability.
+            On the ML side, the dual-model strategy separates “general emotions” from “engagement-related states”, improving semantic
+            clarity. The pipeline also supports explainability through Grad-CAM heatmaps, which is crucial for validating whether the
+            model is focusing on meaningful facial regions rather than background artifacts. For real-time usability, the inference
+            flow is designed to be efficient: lightweight preprocessing, model inference, signal fusion, and structured output generation.
         </p>
 
         <p>
-            From an engineering standpoint, the project emphasizes clear separation of concerns: UI components
-            handle exploration and visualization, while backend services expose stable APIs and isolate ML logic.
-            This structure supports maintainability, makes the system easier to extend with additional analytics
-            modules, and keeps model changes decoupled from interface development.
+            On the backend, the project applies strong data engineering decisions that make analytics scalable. Instead of storing only
+            single-point predictions, the backend stores time-series ML outputs as structured JSON records per day, enabling both granular
+            replay and aggregated reporting. Reporting endpoints compute daily summaries (engagement averages, distraction trends, and emotion
+            distributions) so the frontend can render dashboards efficiently without overloading the client with raw data processing.
+        </p>
+
+        <p>
+            On the frontend/product layer, the architecture is designed to support real dashboard use cases: real-time monitoring, historical
+            trend exploration, and report generation. The output schema is consistent and intentionally “dashboard-first”, meaning every prediction
+            is stored in a format that is easy to chart, filter, and summarize. This makes the solution directly usable for operational review and
+            long-term tracking rather than being limited to real-time overlays.
+        </p>
+
+        <p>
+            The project also demonstrates software engineering principles that matter in production environments:
+            separation of concerns (ML inference vs API storage vs reporting), modular controllers and routes, a clean service layer for database
+            access, and predictable interfaces between components. The system is intentionally designed so each layer can evolve independently:
+            models can be replaced without rewriting the backend schema, reporting logic can expand without changing inference, and the UI can add
+            new dashboards without touching ML internals.
+        </p>
+
+        <p>
+            Privacy and commercial sensitivity are treated as first-class constraints. The design focuses on engagement signals and analytics rather
+            than identity. Operational thresholds, dataset sourcing specifics, and any identity-related features are deliberately abstracted, keeping the
+            portfolio description meaningful while protecting deployment details and commercial applicability.
         </p>
     </div>
 </section>
@@ -331,13 +315,13 @@
 <!-- Navigation -->
 <section class="container">
     <div class="project-nav">
-        <a href="pos-analytics.html" class="project-nav-link">
+        <a href="hybrid-malware-detection.html" class="project-nav-link">
             <span class="project-nav-label">Previous Project</span>
-            <span class="project-nav-title">POS 2.0 - Retail Analytics</span>
+            <span class="project-nav-title">Hybrid Malware Detection System</span>
         </a>
-        <a href="engagement-attention-analytics.html" class="project-nav-link">
+        <a href="aflatoxin-detection.html" class="project-nav-link">
             <span class="project-nav-label">Next Project</span>
-            <span class="project-nav-title">Employee Management System</span>
+            <span class="project-nav-title">Aflatoxin Detection & Yield Prediction System</span>
         </a>
     </div>
 </section>

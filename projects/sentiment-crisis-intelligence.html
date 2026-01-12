@@ -1,0 +1,304 @@
+<!-- projects/sentiment-crisis-intelligence.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment & Crisis Intelligence System | Udeesha Kularathne</title>
+    <meta name="description" content="A hybrid NLP system that aggregates review sentiment and crisis indicators across Sri Lanka to power digital twin analytics and forecasting systems.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/projects.css">
+</head>
+
+<body>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<div class="noise"></div>
+
+<!-- Navigation -->
+<nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+        <a href="../index.html" class="nav-logo">
+            <span class="logo-text">Udeesha Kularathne</span>
+        </a>
+        <div class="nav-links">
+            <a href="../index.html#about" class="nav-link">About</a>
+            <a href="../index.html#experience" class="nav-link">Experience</a>
+            <a href="../projects.html" class="nav-link active">Projects</a>
+            <a href="../blog.html" class="nav-link">Blog</a>
+            <a href="../index.html#contact" class="nav-link">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Project Hero -->
+<section class="project-hero">
+    <div class="container">
+        <div class="project-hero-content">
+
+            <div class="project-breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../projects.html">Projects</a>
+                <span>/</span>
+                <span>Sentiment & Crisis Intelligence</span>
+            </div>
+
+            <h1 class="project-hero-title">Sentiment & Crisis Intelligence System</h1>
+
+            <p class="project-hero-description">
+                A hybrid NLP and analytics system that transforms large-scale textual reviews
+                and crisis indicators into structured district-level sentiment and risk scores,
+                designed to integrate directly with geospatial digital twins and forecasting engines.
+            </p>
+
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">AI Engineer & Backend Engineer</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Timeline</span>
+                    <span class="meta-value">2023 – 2025</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Category</span>
+                    <span class="meta-value">AI/ML, NLP, Decision Intelligence</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-bg">
+        <div class="gradient-sphere gradient-sphere-1"></div>
+        <div class="gradient-sphere gradient-sphere-2"></div>
+        <div class="grid-lines"></div>
+    </div>
+</section>
+
+<!-- Project Cover -->
+<div class="container">
+    <div class="blog-cover">
+        <div
+                class="project-cover-image"
+                style="background-image: url('../assets/images/projects/sentiment-crisis.png');">
+        </div>
+    </div>
+</div>
+
+<!-- Overview -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Project Overview</h2>
+
+        <p>
+            This project serves as the intelligence layer for a larger tourism digital twin
+            ecosystem. Its primary objective is to convert unstructured textual signals
+            (such as reviews and public sentiment) and structured crisis indicators into
+            consistent, district-level scores that can be consumed by downstream analytics
+            and forecasting systems.
+        </p>
+
+        <p>
+            Instead of relying on a single NLP model, the system uses a hybrid ensemble
+            architecture built on transformer-based embeddings combined with multiple
+            regression learners. This design improves robustness across noisy, real-world
+            text while maintaining stable numerical outputs suitable for long-term time-series
+            aggregation.
+        </p>
+
+        <p>
+            The outputs of this system are not presented as raw predictions. They are normalized,
+            aggregated, and aligned temporally so they can be directly integrated into
+            geospatial maps, safety indicators, traffic estimation, and demand forecasting
+            workflows used elsewhere in the platform.
+        </p>
+
+        <p style="font-size: 0.9rem; color: var(--text-muted);">
+            Note: Text sources, labeling strategies, and scoring thresholds are intentionally
+            abstracted to protect commercial applicability and deployment integrity.
+        </p>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Key Features</h2>
+
+        <div class="features-grid">
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+                    </svg>
+                </div>
+                <h3>Transformer-Based Sentiment Encoding</h3>
+                <p>
+                    Uses frozen transformer embeddings to convert raw text into dense semantic
+                    representations suitable for regression-based sentiment scoring.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 3v18h18"/>
+                        <path d="M7 15l3-3 3 2 5-6"/>
+                    </svg>
+                </div>
+                <h3>Hybrid Ensemble Regression</h3>
+                <p>
+                    Combines linear, tree-based, and gradient-boosted models with a
+                    meta-learner to reduce variance and stabilize predictions.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <h3>Temporal & Regional Aggregation</h3>
+                <p>
+                    Aggregates sentiment and crisis signals over time and aligns them
+                    to district-level summaries suitable for time-series analysis.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M7 7h10M7 12h10M7 17h10"/>
+                    </svg>
+                </div>
+                <h3>Digital Twin Integration</h3>
+                <p>
+                    Designed to plug directly into the same map and simulation UI
+                    used by the tourism digital twin and forecasting system.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="tech-stack-section">
+    <div class="container">
+        <h2>Technology & Engineering Stack</h2>
+
+        <div class="tech-grid">
+            <span class="tech-item">Python</span>
+            <span class="tech-item">Transformers (BERT)</span>
+            <span class="tech-item">Sentence Embeddings</span>
+            <span class="tech-item">Ensemble Learning</span>
+
+            <span class="tech-item">Ridge Regression</span>
+            <span class="tech-item">Random Forest</span>
+            <span class="tech-item">XGBoost</span>
+            <span class="tech-item">Stacked Meta-Learner</span>
+
+            <span class="tech-item">Time-Series Aggregation</span>
+            <span class="tech-item">Data Normalization</span>
+
+            <span class="tech-item">Node.js</span>
+            <span class="tech-item">Analytics APIs</span>
+            <span class="tech-item">System Integration</span>
+        </div>
+    </div>
+</section>
+
+<!-- Results -->
+<section class="project-content-section">
+    <div class="container">
+        <h2>Results & Engineering Impact</h2>
+
+        <p>
+            The ensemble-based sentiment modeling approach produces more stable and
+            reliable outputs than single-model NLP pipelines. Transformer embeddings
+            capture semantic nuance, while the regression ensemble smooths out
+            volatility caused by short texts, sarcasm, and inconsistent language use.
+        </p>
+
+        <p>
+            From an ML engineering standpoint, freezing the language model and training
+            lightweight downstream learners significantly reduces training cost while
+            preserving expressive power. This makes the system suitable for periodic
+            retraining and large-scale historical backfills without excessive compute.
+        </p>
+
+        <p>
+            On the system design side, the project emphasizes separation between
+            language understanding and decision logic. The NLP layer produces normalized
+            scores, while downstream components handle aggregation, trend analysis, and
+            visualization. This allows the same sentiment intelligence to support
+            forecasting, safety scoring, and scenario simulation without duplication.
+        </p>
+
+        <p>
+            When integrated into the tourism digital twin, these outputs act as a
+            behavioral and perception signal that complements numerical indicators
+            such as traffic, weather, and demand. This multi-modal fusion improves
+            realism and interpretability for planners and analysts.
+        </p>
+
+        <p>
+            Overall, the project highlights strong software engineering discipline:
+            modular pipelines, reproducible training, model-agnostic interfaces,
+            and clear boundaries between ML inference and application logic. The result
+            is a reusable intelligence component rather than a one-off sentiment model.
+        </p>
+    </div>
+</section>
+
+<!-- Navigation -->
+<section class="container">
+    <div class="project-nav">
+        <a href="tourism-digital-twin.html" class="project-nav-link">
+            <span class="project-nav-label">Previous Project</span>
+            <span class="project-nav-title">Tourism Digital Twin & Forecasting</span>
+        </a>
+        <a href="hybrid-malware-detection.html" class="project-nav-link">
+            <span class="project-nav-label">Next Project</span>
+            <span class="project-nav-title">Hybrid Malware Detection System</span>
+        </a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">Udeesha Kularathne</span>
+                <p>Building the future with code and AI.</p>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#experience">Experience</a>
+                <a href="../projects.html">Projects</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Udeesha Kularathne. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
